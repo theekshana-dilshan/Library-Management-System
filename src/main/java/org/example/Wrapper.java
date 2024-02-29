@@ -1,7 +1,7 @@
 package org.example;
 
-public class Main {
+public class Wrapper {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        Appinitializer.main(args);
     }
 }
