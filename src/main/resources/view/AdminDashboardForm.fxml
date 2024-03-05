@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="780.0" prefWidth="1530.0" style="-fx-background-color: #E5E9ED;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.AdminDashboardFormController">
+<AnchorPane fx:id="root" prefHeight="780.0" prefWidth="1530.0" style="-fx-background-color: #E5E9ED;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.AdminDashboardFormController">
    <children>
       <AnchorPane prefHeight="787.0" prefWidth="254.0" style="-fx-background-color: #FCFCFC;">
          <children>
@@ -75,7 +75,7 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="255.0" layoutY="1.0" prefHeight="786.0" prefWidth="1282.0" style="-fx-background-color: #E5E9ED;">
+      <AnchorPane fx:id="subRoot" layoutX="255.0" layoutY="1.0" prefHeight="786.0" prefWidth="1282.0" style="-fx-background-color: #E5E9ED;">
          <children>
             <Pane layoutX="778.0" layoutY="81.0" prefHeight="242.0" prefWidth="442.0" style="-fx-background-radius: 10px; -fx-background-color: #FCFCFC;">
                <children>

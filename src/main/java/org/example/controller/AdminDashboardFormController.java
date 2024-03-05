@@ -1,16 +1,19 @@
 package org.example.controller;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.Pane;
 
 import java.awt.*;
 import java.io.File;
+import java.io.IOException;
 
 import static java.awt.Color.blue;
 
@@ -52,12 +55,20 @@ public class AdminDashboardFormController {
     @FXML
     private Label lblUsers;
 
+    @FXML
+    private AnchorPane root;
+
+    @FXML
+    private AnchorPane subRoot;
+
     public void initialize(){
         imgDashBoardFocused();
     }
 
     @FXML
-    void lblBooksOnAction(MouseEvent event) {
+    void lblBooksOnAction(MouseEvent event) throws IOException {
+        setUI(subRoot,"/view/BooksForm.fxml");
+
         imgBooksFocused();
         imgUsersDefault();
         imgDashBoardDefault();
@@ -65,7 +76,9 @@ public class AdminDashboardFormController {
     }
 
     @FXML
-    void lblBranchesOnAction(MouseEvent event) {
+    void lblBranchesOnAction(MouseEvent event) throws IOException {
+        setUI(subRoot,"/view/BranchesForm.fxml");
+
         imgBranchesFocused();
         imgDashBoardDefault();
         imgUsersDefault();
@@ -73,7 +86,10 @@ public class AdminDashboardFormController {
     }
 
     @FXML
-    void lblDashBoardOnAction(MouseEvent event) {
+    void lblDashBoardOnAction(MouseEvent event) throws IOException {
+        setUI(root,"/view/AdminDashboardForm.fxml");
+
+
         imgDashBoardFocused();
         imgUsersDefault();
         imgBooksDefault();
@@ -81,11 +97,19 @@ public class AdminDashboardFormController {
     }
 
     @FXML
-    void lblUsersOnAction(MouseEvent event) {
+    void lblUsersOnAction(MouseEvent event) throws IOException {
+        setUI(subRoot,"/view/UserForm.fxml");
+
+
         imgDashBoardDefault();
         imgUsersFocused();
         imgBooksDefault();
         imgBranchesDefault();
+    }
+
+    public void setUI (AnchorPane pane, String location) throws IOException {
+        pane.getChildren().clear();
+        pane.getChildren().add(FXMLLoader.load(getClass().getResource(location)));
     }
 
     void setImageToImageView(ImageView imageView, String imagePath) {

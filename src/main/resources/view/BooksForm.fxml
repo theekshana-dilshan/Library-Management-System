@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="786.0" prefWidth="1282.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.BooksFormController">
+   <children>
+      <AnchorPane fx:id="subRoot" prefHeight="786.0" prefWidth="1282.0" style="-fx-background-color: #E5E9ED;">
+         <children>
+            <Label layoutX="42.0" layoutY="23.0" prefHeight="22.0" prefWidth="314.0" text="Manage books" textFill="#193b68">
+               <font>
+                  <Font name="Arial Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" layoutX="1011.0" layoutY="25.0" prefHeight="18.0" prefWidth="208.0" text="20, february, 2024" textFill="#193b68">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
