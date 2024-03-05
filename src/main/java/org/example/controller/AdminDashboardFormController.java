@@ -52,6 +52,10 @@ public class AdminDashboardFormController {
     @FXML
     private Label lblUsers;
 
+    public void initialize(){
+        imgDashBoardFocused();
+    }
+
     @FXML
     void lblBooksOnAction(MouseEvent event) {
         imgBooksFocused();
