@@ -18,32 +18,22 @@
                   <Font name="Arial Bold" size="18.0" />
                </font>
             </Label>
-            <JFXTextField layoutX="41.0" layoutY="137.0" prefHeight="34.0" prefWidth="255.0" promptText="Enter title of book" style="-fx-text-fill: #193b68; -fx-prompt-text-fill: #193b68;">
+            <JFXTextField layoutX="347.0" layoutY="137.0" prefHeight="34.0" prefWidth="255.0" promptText="Enter title of book" style="-fx-text-fill: #193b68; -fx-prompt-text-fill: #193b68;">
                <font>
                   <Font name="Arial" size="13.0" />
                </font>
             </JFXTextField>
-            <Label layoutX="41.0" layoutY="119.0" prefHeight="22.0" prefWidth="145.0" text="Title" textFill="#1479ff">
+            <Label layoutX="347.0" layoutY="119.0" prefHeight="22.0" prefWidth="145.0" text="Title" textFill="#1479ff">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
             </Label>
-            <JFXTextField layoutX="351.0" layoutY="137.0" prefHeight="34.0" prefWidth="255.0" promptText="Enter author of book" style="-fx-text-fill: #193b68; -fx-prompt-text-fill: #193b68;">
+            <JFXTextField layoutX="657.0" layoutY="137.0" prefHeight="34.0" prefWidth="255.0" promptText="Enter author of book" style="-fx-text-fill: #193b68; -fx-prompt-text-fill: #193b68;">
                <font>
                   <Font name="Arial" size="13.0" />
                </font>
             </JFXTextField>
-            <Label layoutX="351.0" layoutY="119.0" prefHeight="22.0" prefWidth="145.0" text="Author" textFill="#1479ff">
-               <font>
-                  <Font name="Arial Bold" size="14.0" />
-               </font>
-            </Label>
-            <JFXTextField layoutX="660.0" layoutY="137.0" prefHeight="34.0" prefWidth="255.0" promptText="Enter genre" style="-fx-text-fill: #193b68; -fx-prompt-text-fill: #193b68;">
-               <font>
-                  <Font name="Arial" size="13.0" />
-               </font>
-            </JFXTextField>
-            <Label layoutX="660.0" layoutY="119.0" prefHeight="22.0" prefWidth="145.0" text="Genre" textFill="#1479ff">
+            <Label layoutX="657.0" layoutY="119.0" prefHeight="22.0" prefWidth="145.0" text="Author" textFill="#1479ff">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
@@ -54,22 +44,21 @@
                   <Font name="Arial Bold" size="12.0" />
                </font>
             </JFXButton>
-            <Label layoutX="962.0" layoutY="119.0" prefHeight="22.0" prefWidth="145.0" text="Category" textFill="#1479ff">
+            <Label layoutX="962.0" layoutY="119.0" prefHeight="22.0" prefWidth="145.0" text="Genre" textFill="#1479ff">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
             </Label>
-            <JFXComboBox layoutX="962.0" layoutY="137.0" prefHeight="34.0" prefWidth="255.0" promptText="Select category" style="-fx-text-fill: #193b68; -fx-prompt-text-fill: #193b68;" />
+            <JFXComboBox layoutX="962.0" layoutY="137.0" prefHeight="34.0" prefWidth="255.0" promptText="Select genre" style="-fx-text-fill: #193b68; -fx-prompt-text-fill: #193b68;" />
             <TableView layoutX="41.0" layoutY="296.0" prefHeight="450.0" prefWidth="1189.0" style="-fx-text-fill: #193b68;" stylesheets="@../Style/Style.css">
               <columns>
                 <TableColumn minWidth="0.0" prefWidth="83.19997787475586" text="Book ID" />
-                <TableColumn prefWidth="263.2000274658203" text="Title" />
-                  <TableColumn prefWidth="208.79998779296875" text="Author" />
-                  <TableColumn prefWidth="135.199951171875" text="Genre" />
-                  <TableColumn prefWidth="149.60003662109375" text="Category" />
-                  <TableColumn prefWidth="113.5999755859375" text="Avalability" />
-                  <TableColumn prefWidth="112.00006103515625" text="Update" />
-                  <TableColumn prefWidth="112.0" text="Remove" />
+                <TableColumn prefWidth="366.3999786376953" text="Title" />
+                  <TableColumn prefWidth="213.60003662109375" text="Author" />
+                  <TableColumn prefWidth="158.4000244140625" text="Genre" />
+                  <TableColumn prefWidth="139.20001220703125" text="Avalability" />
+                  <TableColumn prefWidth="105.60003662109375" text="Update" />
+                  <TableColumn prefWidth="112.79998779296875" text="Remove" />
               </columns>
             </TableView>
             <JFXButton layoutX="1138.0" layoutY="217.0" prefHeight="34.0" prefWidth="78.0" style="-fx-background-color: #1479ff;" text="Clear" textFill="WHITE">
@@ -92,12 +81,12 @@
                   <Font name="Arial Bold" size="12.0" />
                </font>
             </JFXButton>
-            <JFXTextField layoutX="41.0" layoutY="209.0" prefHeight="34.0" prefWidth="255.0" promptText="Book ID (Auto generate)" style="-fx-text-fill: #193b68; -fx-prompt-text-fill: #193b68;">
+            <JFXTextField layoutX="41.0" layoutY="137.0" prefHeight="34.0" prefWidth="255.0" promptText="Book ID (Auto generate)" style="-fx-text-fill: #193b68; -fx-prompt-text-fill: #193b68;">
                <font>
                   <Font name="Arial" size="13.0" />
                </font>
             </JFXTextField>
-            <Label layoutX="41.0" layoutY="191.0" prefHeight="22.0" prefWidth="145.0" text="Book ID" textFill="#1479ff">
+            <Label layoutX="41.0" layoutY="119.0" prefHeight="22.0" prefWidth="145.0" text="Book ID" textFill="#1479ff">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
