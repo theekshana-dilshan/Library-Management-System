@@ -16,7 +16,7 @@ public class Appinitializer extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        Parent parent = FXMLLoader.load(this.getClass().getResource("/view/AdminDashboardForm.fxml"));
+        Parent parent = FXMLLoader.load(this.getClass().getResource("/view/UserDashboardForm.fxml"));
         Scene scene = new Scene(parent);
         primaryStage.setScene(scene);
         primaryStage.centerOnScreen();

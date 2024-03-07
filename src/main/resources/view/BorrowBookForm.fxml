@@ -39,7 +39,7 @@
                         <Font name="Arial Bold" size="14.0" />
                      </font>
                   </Label>
-                  <JFXButton layoutX="380.0" layoutY="188.0" prefHeight="35.0" prefWidth="155.0" style="-fx-background-color: #1479FF;" text="Borrow" textFill="WHITE">
+                  <JFXButton layoutX="380.0" layoutY="188.0" onAction="#btnBorrowOnAction" prefHeight="35.0" prefWidth="155.0" style="-fx-background-color: #1479FF;" text="Borrow" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="11.0" />
                      </font>
@@ -69,7 +69,7 @@
                         <Font name="Arial Bold" size="12.0" />
                      </font>
                   </Label>
-                  <Pane layoutX="14.0" layoutY="32.0" prefHeight="200.0" prefWidth="546.0" style="-fx-background-color: #FCFCFC;">
+                  <Pane fx:id="BooksDetailsPane" layoutX="14.0" layoutY="32.0" prefHeight="200.0" prefWidth="546.0" style="-fx-background-color: #FCFCFC;">
                      <children>
                         <ImageView fitHeight="199.0" fitWidth="195.0" layoutX="330.0" layoutY="1.0">
                            <image>
@@ -145,7 +145,7 @@
                      </font>
                   </Label>
                   <CheckBox layoutX="42.0" layoutY="312.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="276.0" style="-fx-text-fill: #1479FF;" text="You must return book before or on return date" textAlignment="CENTER" />
-                  <Pane layoutX="14.0" layoutY="34.0" prefHeight="335.0" prefWidth="546.0" style="-fx-background-color: #FCFCFC;">
+                  <Pane fx:id="BorrowBookPane" layoutX="14.0" layoutY="34.0" prefHeight="335.0" prefWidth="546.0" style="-fx-background-color: #FCFCFC;">
                      <children>
                         <ImageView fitHeight="274.0" fitWidth="276.0" layoutX="246.0" layoutY="74.0">
                            <image>
