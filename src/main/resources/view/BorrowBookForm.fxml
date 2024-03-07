@@ -13,7 +13,6 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="786.0" prefWidth="1282.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.BorrowBookFormController">
    <children>
       <AnchorPane fx:id="subRoot" prefHeight="786.0" prefWidth="1282.0" style="-fx-background-color: #E5E9ED;">
@@ -25,11 +24,6 @@
             </Label>
             <Pane layoutX="658.0" layoutY="81.0" prefHeight="244.0" prefWidth="575.0" style="-fx-background-color: #FCFCFC; -fx-background-radius: 10px;">
                <children>
-                  <ImageView fitHeight="199.0" fitWidth="195.0" layoutX="340.0" layoutY="43.0">
-                     <image>
-                        <Image url="@../assests/24005145_6888606-removebg-preview.png" />
-                     </image>
-                  </ImageView>
                   <Label layoutX="22.0" layoutY="48.0" text="Title" textFill="#1479ff">
                      <font>
                         <Font name="Arial Bold" size="12.0" />
@@ -75,20 +69,24 @@
                         <Font name="Arial Bold" size="12.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" layoutX="145.0" layoutY="82.0" text="Select a book form table" textFill="#1479ff">
-                     <font>
-                        <Font name="Arial Bold" size="12.0" />
-                     </font>
-                  </Label>
+                  <Pane layoutX="14.0" layoutY="32.0" prefHeight="200.0" prefWidth="546.0" style="-fx-background-color: #FCFCFC;">
+                     <children>
+                        <ImageView fitHeight="199.0" fitWidth="195.0" layoutX="330.0" layoutY="1.0">
+                           <image>
+                              <Image url="@../assests/24005145_6888606-removebg-preview.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" layoutX="124.0" layoutY="56.0" text="Select a book form table" textFill="#1479ff">
+                           <font>
+                              <Font name="Arial Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
                </children>
             </Pane>
             <Pane layoutX="658.0" layoutY="367.0" prefHeight="374.0" prefWidth="575.0" style="-fx-background-color: #FCFCFC; -fx-background-radius: 10px;">
                <children>
-                  <ImageView fitHeight="274.0" fitWidth="276.0" layoutX="265.0" layoutY="81.0">
-                     <image>
-                        <Image url="@../assests/24307396_6920933-removebg-preview.png" />
-                     </image>
-                  </ImageView>
                   <Label layoutX="22.0" layoutY="73.0" text="Title" textFill="#1479ff">
                      <font>
                         <Font name="Arial Bold" size="12.0" />
@@ -147,11 +145,20 @@
                      </font>
                   </Label>
                   <CheckBox layoutX="42.0" layoutY="312.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="276.0" style="-fx-text-fill: #1479FF;" text="You must return book before or on return date" textAlignment="CENTER" />
-                  <Label alignment="CENTER" layoutX="138.0" layoutY="122.0" text="Borrow a book" textFill="#1479ff">
-                     <font>
-                        <Font name="Arial Bold" size="12.0" />
-                     </font>
-                  </Label>
+                  <Pane layoutX="14.0" layoutY="34.0" prefHeight="335.0" prefWidth="546.0" style="-fx-background-color: #FCFCFC;">
+                     <children>
+                        <ImageView fitHeight="274.0" fitWidth="276.0" layoutX="246.0" layoutY="74.0">
+                           <image>
+                              <Image url="@../assests/24307396_6920933-removebg-preview.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" layoutX="129.0" layoutY="75.0" text="Borrow a book" textFill="#1479ff">
+                           <font>
+                              <Font name="Arial Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
                </children>
             </Pane>
          </children>

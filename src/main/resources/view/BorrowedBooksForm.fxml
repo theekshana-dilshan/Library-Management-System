@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="786.0" prefWidth="1282.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.BorrowedBooksFormController">
+   <children>
+      <AnchorPane fx:id="subRoot" prefHeight="786.0" prefWidth="1282.0" style="-fx-background-color: #E5E9ED;">
+         <children>
+            <Label layoutX="42.0" layoutY="23.0" prefHeight="22.0" prefWidth="314.0" text="Borrowed books" textFill="#193b68">
+               <font>
+                  <Font name="Arial Bold" size="18.0" />
+               </font>
+            </Label>
+            <Pane layoutX="42.0" layoutY="654.0" prefHeight="90.0" prefWidth="314.0" style="-fx-background-color: #FCFCFC; -fx-background-radius: 10px; -fx-border-color: #1479ff; -fx-border-radius: 10px;">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" prefHeight="22.0" prefWidth="151.0" text="No. of books read" textFill="#193b68">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="15.0" layoutY="53.0" prefHeight="22.0" prefWidth="151.0" text="00" textFill="#1479ff">
+                     <font>
+                        <Font name="Arial Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="924.0" layoutY="654.0" prefHeight="90.0" prefWidth="314.0" style="-fx-background-color: #FCFCFC; -fx-background-radius: 10px; -fx-border-color: #1479ff; -fx-border-radius: 10px;">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" prefHeight="22.0" prefWidth="151.0" text="Books reading" textFill="#193b68">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="15.0" layoutY="53.0" prefHeight="22.0" prefWidth="151.0" text="00" textFill="#1479ff">
+                     <font>
+                        <Font name="Arial Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="484.0" layoutY="654.0" prefHeight="90.0" prefWidth="314.0" style="-fx-background-color: #FCFCFC; -fx-background-radius: 10px; -fx-border-color: #1479ff; -fx-border-radius: 10px;">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" prefHeight="22.0" prefWidth="151.0" text="Books to return" textFill="#193b68">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="15.0" layoutY="53.0" prefHeight="22.0" prefWidth="151.0" text="00" textFill="#1479ff">
+                     <font>
+                        <Font name="Arial Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+      <TableView layoutX="41.0" layoutY="89.0" prefHeight="517.0" prefWidth="1210.0" style="-fx-text-fill: #193b68;" stylesheets="@../Style/Style.css">
+         <columns>
+            <TableColumn minWidth="0.0" prefWidth="83.19997787475586" text="Book ID" />
+            <TableColumn prefWidth="366.3999786376953" text="Title" />
+            <TableColumn prefWidth="213.60003662109375" text="Author" />
+            <TableColumn prefWidth="158.4000244140625" text="Genre" />
+            <TableColumn prefWidth="139.20001220703125" text="return" />
+            <TableColumn prefWidth="215.2000732421875" text="Remove from history" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>
