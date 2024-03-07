@@ -8,7 +8,8 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" prefHeight="780.0" prefWidth="1530.0" style="-fx-background-color: #E5E9ED;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.AdminDashboardFormController">
+
+<AnchorPane prefHeight="780.0" prefWidth="1530.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.UserDashboardFormController">
    <children>
       <AnchorPane prefHeight="787.0" prefWidth="254.0" style="-fx-background-color: #FCFCFC;">
          <children>
@@ -31,21 +32,7 @@
                   <Font name="Arial Bold" size="14.0" />
                </font>
             </Label>
-            <Pane fx:id="UsersIconPane" layoutX="30.0" layoutY="208.0" prefHeight="35.0" prefWidth="35.0" style="-fx-background-radius: 10px; -fx-background-color: #E5E9ED;">
-               <children>
-                  <ImageView fx:id="imgUsers" fitHeight="25.0" fitWidth="25.0" layoutX="5.0" layoutY="5.0">
-                     <image>
-                        <Image url="@../assests/icons8-users-30.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </Pane>
-            <Label fx:id="lblUsers" layoutX="90.0" layoutY="208.0" onMouseClicked="#lblUsersOnAction" prefHeight="35.0" prefWidth="74.0" text="Users">
-               <font>
-                  <Font name="Arial Bold" size="14.0" />
-               </font>
-            </Label>
-            <Pane fx:id="UsersIconPane1" layoutX="29.0" layoutY="266.0" prefHeight="35.0" prefWidth="35.0" style="-fx-background-radius: 10px; -fx-background-color: #E5E9ED;">
+            <Pane fx:id="UsersIconPane1" layoutX="30.0" layoutY="210.0" prefHeight="35.0" prefWidth="35.0" style="-fx-background-radius: 10px; -fx-background-color: #E5E9ED;">
                <children>
                   <ImageView fx:id="imgBooks" fitHeight="25.0" fitWidth="25.0" layoutX="5.0" layoutY="5.0">
                      <image>
@@ -54,21 +41,21 @@
                   </ImageView>
                </children>
             </Pane>
-            <Label fx:id="lblBooks" layoutX="90.0" layoutY="266.0" onMouseClicked="#lblBooksOnAction" prefHeight="35.0" prefWidth="74.0" text="Books">
+            <Label fx:id="lblBooks" layoutX="91.0" layoutY="210.0" onMouseClicked="#lblBooksOnAction" prefHeight="35.0" prefWidth="155.0" text="Barrow Book">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
             </Label>
-            <Pane fx:id="branchesIconPane" layoutX="30.0" layoutY="323.0" prefHeight="35.0" prefWidth="35.0" style="-fx-background-radius: 10px; -fx-background-color: #E5E9ED;">
+            <Pane fx:id="UsersIconPane11" layoutX="30.0" layoutY="268.0" prefHeight="35.0" prefWidth="35.0" style="-fx-background-radius: 10px; -fx-background-color: #E5E9ED;">
                <children>
-                  <ImageView fx:id="imgBranches" fitHeight="25.0" fitWidth="25.0" layoutX="5.0" layoutY="5.0">
+                  <ImageView fx:id="imgBooks1" fitHeight="25.0" fitWidth="25.0" layoutX="5.0" layoutY="5.0">
                      <image>
-                        <Image url="@../assests/icons8-houses-50.png" />
+                        <Image url="@../assests/icons8-books-24.png" />
                      </image>
                   </ImageView>
                </children>
             </Pane>
-            <Label fx:id="lblBranches" layoutX="90.0" layoutY="323.0" onMouseClicked="#lblBranchesOnAction" prefHeight="35.0" prefWidth="74.0" text="Branches">
+            <Label fx:id="lblBooks1" layoutX="91.0" layoutY="268.0" onMouseClicked="#lblBooksOnAction" prefHeight="35.0" prefWidth="155.0" text="Barrowed Books">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
@@ -202,6 +189,7 @@
                   <Font name="Arial" size="14.0" />
                </font>
             </Label>
-         </children></AnchorPane>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
