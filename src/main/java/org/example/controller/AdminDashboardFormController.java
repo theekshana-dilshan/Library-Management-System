@@ -61,8 +61,13 @@ public class AdminDashboardFormController {
     @FXML
     private AnchorPane subRoot;
 
+    @FXML
+    private Pane totalReadersPane;
+
     public void initialize(){
         imgDashBoardFocused();
+        /*totalReadersPane.setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, #599dff, 10, 0, 1, 2); -fx-background-radius: 10px;");*/
+        totalReadersPane.setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, #a9cdfa, 10, 0, 0, 6); -fx-background-radius: 10px;");
     }
 
     @FXML

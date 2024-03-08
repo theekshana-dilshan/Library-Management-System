@@ -75,7 +75,7 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="subRoot" layoutX="255.0" prefHeight="786.0" prefWidth="1282.0" style="-fx-background-color: #E5E9ED;">
+      <AnchorPane fx:id="subRoot" layoutX="255.0" prefHeight="786.0" prefWidth="1282.0" style="-fx-background-color: #E9EDF1;">
          <children>
             <Pane layoutX="778.0" layoutY="81.0" prefHeight="242.0" prefWidth="442.0" style="-fx-background-radius: 10px; -fx-background-color: #FCFCFC;">
                <children>
@@ -120,7 +120,7 @@
                   <Font name="Arial Bold" size="18.0" />
                </font>
             </Label>
-            <Pane layoutX="40.0" layoutY="81.0" prefHeight="130.0" prefWidth="406.0" style="-fx-background-radius: 10px; -fx-background-color: #FCFCFC;">
+            <Pane fx:id="totalReadersPane" layoutX="40.0" layoutY="81.0" prefHeight="130.0" prefWidth="406.0" style="-fx-background-radius: 10px; -fx-background-color: #FCFCFC;">
                <children>
                   <Label alignment="CENTER" layoutX="191.0" layoutY="26.0" text="Total Readers" textFill="#193b68">
                      <font>
