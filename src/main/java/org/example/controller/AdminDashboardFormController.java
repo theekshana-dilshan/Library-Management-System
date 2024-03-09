@@ -8,6 +8,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import org.jetbrains.annotations.NotNull;
 
 import java.awt.*;
 import java.io.File;
@@ -114,7 +115,7 @@ public class AdminDashboardFormController {
         imgBranchesDefault();
     }
 
-    public void setUI (AnchorPane pane, String location) throws IOException {
+    public void setUI (AnchorPane pane,String location) throws IOException {
         pane.getChildren().clear();
         pane.getChildren().add(FXMLLoader.load(getClass().getResource(location)));
     }
