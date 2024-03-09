@@ -22,20 +22,20 @@
                   <Font name="Arial Bold" size="18.0" />
                </font>
             </Label>
-            <JFXTextField layoutX="943.0" layoutY="25.0" prefHeight="34.0" prefWidth="216.0" style="-fx-text-fill: #193b68;" />
-            <JFXButton layoutX="1156.0" layoutY="27.0" prefHeight="33.0" prefWidth="62.0" style="-fx-border-color: #1479ff; -fx-border-radius: 5px;" text="Search" textFill="#193b68">
+            <JFXTextField fx:id="txtSearch" layoutX="943.0" layoutY="25.0" onAction="#txtSearchOnAction" prefHeight="34.0" prefWidth="216.0" style="-fx-text-fill: #193b68;" />
+            <JFXButton layoutX="1156.0" layoutY="27.0" onAction="#btnSearchOnAction" prefHeight="33.0" prefWidth="62.0" style="-fx-border-color: #1479ff; -fx-border-radius: 5px;" text="Search" textFill="#193b68">
                <font>
                   <Font name="Arial Bold" size="12.0" />
                </font>
             </JFXButton>
-            <TableView layoutX="41.0" layoutY="296.0" prefHeight="450.0" prefWidth="1189.0" style="-fx-text-fill: #193b68;" stylesheets="@../Style/Style.css">
+            <TableView fx:id="tblUser" layoutX="41.0" layoutY="296.0" prefHeight="450.0" prefWidth="1189.0" style="-fx-text-fill: #193b68;" stylesheets="@../Style/Style.css">
                <columns>
-                  <TableColumn minWidth="0.0" prefWidth="107.99996566772461" text="User ID" />
-                  <TableColumn prefWidth="294.40000915527344" text="User name" />
-                  <TableColumn prefWidth="371.199951171875" text="Email" />
-                  <TableColumn prefWidth="138.4000244140625" text="Borrowed books" />
-                  <TableColumn prefWidth="133.5999755859375" text="Books to return" />
-                  <TableColumn prefWidth="136.00006103515625" text="Delete user" />
+                  <TableColumn fx:id="colUserId" minWidth="0.0" prefWidth="107.99996566772461" text="User ID" />
+                  <TableColumn fx:id="colUserName" prefWidth="294.40000915527344" text="User name" />
+                  <TableColumn fx:id="colEmail" prefWidth="371.199951171875" text="Email" />
+                  <TableColumn fx:id="colBorrowedBooks" prefWidth="138.4000244140625" text="Borrowed books" />
+                  <TableColumn fx:id="colBooksToReturn" prefWidth="133.5999755859375" text="Books to return" />
+                  <TableColumn fx:id="colDeleteUser" prefWidth="136.00006103515625" text="Delete user" />
                </columns>
             </TableView>
             <Pane fx:id="userDetailsPane" layoutX="41.0" layoutY="85.0" prefHeight="170.0" prefWidth="563.0" style="-fx-background-color: #FCFCFC; -fx-background-radius: 10px;">
@@ -55,18 +55,18 @@
                         <Font name="Arial Bold" size="14.0" />
                      </font>
                   </Label>
-                  <JFXButton layoutX="383.0" layoutY="111.0" prefHeight="35.0" prefWidth="155.0" style="-fx-background-color: #1479FF;" text="Remove User" textFill="WHITE">
+                  <JFXButton layoutX="383.0" layoutY="111.0" onAction="#btnRemoveUserOnAction" prefHeight="35.0" prefWidth="155.0" style="-fx-background-color: #1479FF;" text="Remove User" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="11.0" />
                      </font>
                   </JFXButton>
-                  <CheckBox layoutX="392.0" layoutY="88.0" mnemonicParsing="false" style="-fx-text-fill: #1479FF;" text="Notify when removed" />
-                  <Label layoutX="21.0" layoutY="69.0" prefHeight="22.0" prefWidth="308.0" text="Sample user name" textFill="#193b68">
+                  <CheckBox fx:id="checkBoxNotify" layoutX="392.0" layoutY="88.0" mnemonicParsing="false" style="-fx-text-fill: #1479FF;" text="Notify when removed" />
+                  <Label fx:id="lblSetUserName" layoutX="21.0" layoutY="69.0" prefHeight="22.0" prefWidth="308.0" text="Sample user name" textFill="#193b68">
                      <font>
                         <Font name="Arial Bold" size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="21.0" layoutY="124.0" prefHeight="22.0" prefWidth="333.0" text="Sample email" textFill="#193b68">
+                  <Label fx:id="lblSetEmail" layoutX="21.0" layoutY="124.0" prefHeight="22.0" prefWidth="333.0" text="Sample email" textFill="#193b68">
                      <font>
                         <Font name="Arial Bold" size="18.0" />
                      </font>
@@ -104,17 +104,17 @@
                         <Font name="Arial Bold" size="14.0" />
                      </font>
                   </Label>
-                  <JFXButton layoutX="380.0" layoutY="111.0" prefHeight="35.0" prefWidth="155.0" style="-fx-background-color: #1479FF;" text="Notify User via Email" textFill="WHITE">
+                  <JFXButton layoutX="380.0" layoutY="111.0" onAction="#btnNotifyViaEmailOnAction" prefHeight="35.0" prefWidth="155.0" style="-fx-background-color: #1479FF;" text="Notify User via Email" textFill="WHITE">
                      <font>
                         <Font name="Arial Bold" size="11.0" />
                      </font>
                   </JFXButton>
-                  <Label layoutX="22.0" layoutY="67.0" prefHeight="22.0" prefWidth="230.0" text="Sample user name" textFill="#193b68">
+                  <Label fx:id="lblSetUserNameOnBooksDetailsPane" layoutX="22.0" layoutY="67.0" prefHeight="22.0" prefWidth="230.0" text="Sample user name" textFill="#193b68">
                      <font>
                         <Font name="Arial Bold" size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="22.0" layoutY="122.0" prefHeight="22.0" prefWidth="148.0" text="00" textFill="#193b68">
+                  <Label fx:id="lblSetBooksToReturn" layoutX="22.0" layoutY="122.0" prefHeight="22.0" prefWidth="148.0" text="00" textFill="#193b68">
                      <font>
                         <Font name="Arial Bold" size="18.0" />
                      </font>
@@ -124,12 +124,12 @@
                         <Font name="Arial Bold" size="12.0" />
                      </font>
                   </Label>
-                  <Label layoutX="171.0" layoutY="122.0" prefHeight="22.0" prefWidth="148.0" text="00.00.0000" textFill="#193b68">
+                  <Label fx:id="lblSetDueDate" layoutX="171.0" layoutY="122.0" prefHeight="22.0" prefWidth="148.0" text="00.00.0000" textFill="#193b68">
                      <font>
                         <Font name="Arial Bold" size="18.0" />
                      </font>
                   </Label>
-                  <JFXComboBox layoutX="288.0" layoutY="61.0" prefHeight="22.0" prefWidth="258.0" promptText="Select Book" style="-fx-text-fill: #193b68; -fx-prompt-text-fill: #193b68;" />
+                  <JFXComboBox fx:id="cmbBookName" layoutX="288.0" layoutY="61.0" onAction="#cmbBookNameOnAction" prefHeight="22.0" prefWidth="258.0" promptText="Select Book" style="-fx-text-fill: #193b68; -fx-prompt-text-fill: #193b68;" />
                   <Label layoutX="288.0" layoutY="48.0" text="Book Name" textFill="#1479ff">
                      <font>
                         <Font name="Arial Bold" size="12.0" />
