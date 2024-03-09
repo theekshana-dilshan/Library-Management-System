@@ -18,7 +18,7 @@
                   <Font name="Arial Bold" size="18.0" />
                </font>
             </Label>
-            <JFXTextField layoutX="41.0" layoutY="137.0" prefHeight="34.0" prefWidth="255.0" promptText="Enter branch code" style="-fx-text-fill: #193b68; -fx-prompt-text-fill: #193b68;">
+            <JFXTextField fx:id="txtBranchCode" layoutX="41.0" layoutY="137.0" prefHeight="34.0" prefWidth="255.0" promptText="Enter branch code" style="-fx-text-fill: #193b68; -fx-prompt-text-fill: #193b68;">
                <font>
                   <Font name="Arial" size="13.0" />
                </font>
@@ -28,7 +28,7 @@
                   <Font name="Arial Bold" size="14.0" />
                </font>
             </Label>
-            <JFXTextField layoutX="351.0" layoutY="137.0" prefHeight="34.0" prefWidth="255.0" promptText="Branch location" style="-fx-text-fill: #193b68; -fx-prompt-text-fill: #193b68;">
+            <JFXTextField fx:id="txtLocation" layoutX="351.0" layoutY="137.0" prefHeight="34.0" prefWidth="255.0" promptText="Branch location" style="-fx-text-fill: #193b68; -fx-prompt-text-fill: #193b68;">
                <font>
                   <Font name="Arial" size="13.0" />
                </font>
@@ -38,7 +38,7 @@
                   <Font name="Arial Bold" size="14.0" />
                </font>
             </Label>
-            <JFXTextField layoutX="660.0" layoutY="137.0" prefHeight="34.0" prefWidth="255.0" promptText="Telephone number" style="-fx-text-fill: #193b68; -fx-prompt-text-fill: #193b68;">
+            <JFXTextField fx:id="txtContact" layoutX="660.0" layoutY="137.0" prefHeight="34.0" prefWidth="255.0" promptText="Telephone number" style="-fx-text-fill: #193b68; -fx-prompt-text-fill: #193b68;">
                <font>
                   <Font name="Arial" size="13.0" />
                </font>
@@ -48,8 +48,8 @@
                   <Font name="Arial Bold" size="14.0" />
                </font>
             </Label>
-            <JFXTextField layoutX="943.0" layoutY="25.0" prefHeight="34.0" prefWidth="216.0" style="-fx-text-fill: #193b68;" />
-            <JFXButton layoutX="1156.0" layoutY="27.0" prefHeight="33.0" prefWidth="62.0" style="-fx-border-color: #1479ff; -fx-border-radius: 5px;" text="Search" textFill="#193b68">
+            <JFXTextField fx:id="txtSearch" layoutX="943.0" layoutY="25.0" onAction="#txtSearchOnAction" prefHeight="34.0" prefWidth="216.0" style="-fx-text-fill: #193b68;" />
+            <JFXButton layoutX="1156.0" layoutY="27.0" onAction="#btnSearchOnAction" prefHeight="33.0" prefWidth="62.0" style="-fx-border-color: #1479ff; -fx-border-radius: 5px;" text="Search" textFill="#193b68">
                <font>
                   <Font name="Arial Bold" size="12.0" />
                </font>
@@ -59,33 +59,33 @@
                   <Font name="Arial Bold" size="14.0" />
                </font>
             </Label>
-            <JFXComboBox layoutX="962.0" layoutY="137.0" prefHeight="34.0" prefWidth="255.0" promptText="Open or Close" style="-fx-text-fill: #193b68; -fx-prompt-text-fill: #193b68;" />
-            <TableView layoutX="41.0" layoutY="296.0" prefHeight="450.0" prefWidth="1189.0" style="-fx-text-fill: #193b68;" stylesheets="@../Style/Style.css">
+            <JFXComboBox fx:id="cmbStatus" layoutX="962.0" layoutY="137.0" prefHeight="34.0" prefWidth="255.0" promptText="Open or Close" style="-fx-text-fill: #193b68; -fx-prompt-text-fill: #193b68;" />
+            <TableView fx:id="tblBanches" layoutX="41.0" layoutY="296.0" prefHeight="450.0" prefWidth="1189.0" style="-fx-text-fill: #193b68;" stylesheets="@../Style/Style.css">
                <columns>
-                  <TableColumn prefWidth="146.3999900817871" text="Code" />
-                  <TableColumn prefWidth="424.8000030517578" text="Location" />
-                  <TableColumn prefWidth="212.0" text="Contact number" />
-                  <TableColumn prefWidth="149.5999755859375" text="Status" />
-                  <TableColumn prefWidth="129.60003662109375" text="Update" />
-                  <TableColumn prefWidth="112.800048828125" text="Remove" />
+                  <TableColumn fx:id="colCode" prefWidth="146.3999900817871" text="Code" />
+                  <TableColumn fx:id="colLocation" prefWidth="424.8000030517578" text="Location" />
+                  <TableColumn fx:id="colContact" prefWidth="212.0" text="Contact number" />
+                  <TableColumn fx:id="colStatus" prefWidth="149.5999755859375" text="Status" />
+                  <TableColumn fx:id="colUpdate" prefWidth="129.60003662109375" text="Update" />
+                  <TableColumn fx:id="colRemove" prefWidth="112.800048828125" text="Remove" />
                </columns>
             </TableView>
-            <JFXButton layoutX="1138.0" layoutY="217.0" prefHeight="34.0" prefWidth="78.0" style="-fx-background-color: #1479ff;" text="Clear" textFill="WHITE">
+            <JFXButton layoutX="1138.0" layoutY="217.0" onAction="#btnClearOnAction" prefHeight="34.0" prefWidth="78.0" style="-fx-background-color: #1479ff;" text="Clear" textFill="WHITE">
                <font>
                   <Font name="Arial Bold" size="12.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="1035.0" layoutY="217.0" prefHeight="34.0" prefWidth="78.0" style="-fx-background-color: #1479ff;" text="Delete" textFill="WHITE">
+            <JFXButton layoutX="1035.0" layoutY="217.0" onAction="#btnDeleteOnAction" prefHeight="34.0" prefWidth="78.0" style="-fx-background-color: #1479ff;" text="Delete" textFill="WHITE">
                <font>
                   <Font name="Arial Bold" size="12.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="927.0" layoutY="218.0" prefHeight="34.0" prefWidth="78.0" style="-fx-background-color: #1479ff;" text="Update" textFill="WHITE">
+            <JFXButton layoutX="927.0" layoutY="218.0" onAction="#btnUpdateOnAction" prefHeight="34.0" prefWidth="78.0" style="-fx-background-color: #1479ff;" text="Update" textFill="WHITE">
                <font>
                   <Font name="Arial Bold" size="12.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="816.0" layoutY="218.0" prefHeight="34.0" prefWidth="78.0" style="-fx-background-color: #1479ff;" text="Add" textFill="WHITE">
+            <JFXButton layoutX="816.0" layoutY="218.0" onAction="#btnAddOnAction" prefHeight="34.0" prefWidth="78.0" style="-fx-background-color: #1479ff;" text="Add" textFill="WHITE">
                <font>
                   <Font name="Arial Bold" size="12.0" />
                </font>
