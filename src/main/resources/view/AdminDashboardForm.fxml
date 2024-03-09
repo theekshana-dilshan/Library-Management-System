@@ -77,7 +77,7 @@
       </AnchorPane>
       <AnchorPane fx:id="subRoot" layoutX="255.0" prefHeight="786.0" prefWidth="1282.0" style="-fx-background-color: #E9EDF1;">
          <children>
-            <Pane layoutX="778.0" layoutY="81.0" prefHeight="242.0" prefWidth="442.0" style="-fx-background-radius: 10px; -fx-background-color: #FCFCFC;">
+            <Pane fx:id="helloPane" layoutX="778.0" layoutY="81.0" prefHeight="242.0" prefWidth="442.0" style="-fx-background-radius: 10px; -fx-background-color: #FCFCFC;">
                <children>
                   <ImageView fitHeight="277.0" fitWidth="277.0" layoutX="204.0" layoutY="-11.0">
                      <image>
@@ -96,7 +96,7 @@
                   </JFXButton>
                </children>
             </Pane>
-            <Pane layoutX="496.0" layoutY="81.0" prefHeight="241.0" prefWidth="241.0" style="-fx-background-radius: 10px; -fx-background-color: #FCFCFC;">
+            <Pane fx:id="topReaderPane" layoutX="496.0" layoutY="81.0" prefHeight="241.0" prefWidth="241.0" style="-fx-background-radius: 10px; -fx-background-color: #FCFCFC;">
                <children>
                   <Label layoutX="22.0" layoutY="24.0" text="Top reader" textFill="#193b68">
                      <font>
@@ -139,7 +139,7 @@
                   </ImageView>
                </children>
             </Pane>
-            <Pane layoutX="40.0" layoutY="256.0" prefHeight="130.0" prefWidth="406.0" style="-fx-background-radius: 10px; -fx-background-color: #FCFCFC;">
+            <Pane fx:id="totalBooksPane" layoutX="40.0" layoutY="256.0" prefHeight="130.0" prefWidth="406.0" style="-fx-background-radius: 10px; -fx-background-color: #FCFCFC;">
                <children>
                   <ImageView layoutX="25.0" layoutY="24.0">
                      <image>
@@ -158,7 +158,7 @@
                   </Label>
                </children>
             </Pane>
-            <Pane layoutX="40.0" layoutY="434.0" prefHeight="130.0" prefWidth="406.0" style="-fx-background-radius: 10px; -fx-background-color: #FCFCFC;">
+            <Pane fx:id="availableBooksPane" layoutX="40.0" layoutY="434.0" prefHeight="130.0" prefWidth="406.0" style="-fx-background-radius: 10px; -fx-background-color: #FCFCFC;">
                <children>
                   <ImageView layoutX="26.0" layoutY="20.0">
                      <image>
@@ -177,7 +177,7 @@
                   </Label>
                </children>
             </Pane>
-            <Pane layoutX="40.0" layoutY="610.0" prefHeight="130.0" prefWidth="406.0" style="-fx-background-radius: 10px; -fx-background-color: #FCFCFC;">
+            <Pane fx:id="totalBorrowedBooksPane" layoutX="40.0" layoutY="610.0" prefHeight="130.0" prefWidth="406.0" style="-fx-background-radius: 10px; -fx-background-color: #FCFCFC;">
                <children>
                   <ImageView layoutX="30.0" layoutY="21.0">
                      <image>
@@ -196,7 +196,7 @@
                   </Label>
                </children>
             </Pane>
-            <Pane layoutX="496.0" layoutY="362.0" prefHeight="379.0" prefWidth="722.0" style="-fx-background-radius: 10px; -fx-background-color: #FCFCFC;" />
+            <Pane fx:id="categoryPane" layoutX="496.0" layoutY="362.0" prefHeight="379.0" prefWidth="722.0" style="-fx-background-radius: 10px; -fx-background-color: #FCFCFC;" />
             <Label alignment="CENTER_RIGHT" layoutX="1011.0" layoutY="25.0" prefHeight="18.0" prefWidth="208.0" text="20, february, 2024" textFill="#193b68">
                <font>
                   <Font name="Arial" size="14.0" />

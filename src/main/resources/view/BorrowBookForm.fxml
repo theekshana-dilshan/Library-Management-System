@@ -22,7 +22,7 @@
                   <Font name="Arial Bold" size="18.0" />
                </font>
             </Label>
-            <Pane layoutX="658.0" layoutY="81.0" prefHeight="244.0" prefWidth="575.0" style="-fx-background-color: #FCFCFC; -fx-background-radius: 10px;">
+            <Pane fx:id="bookDetailsPaneParent" layoutX="658.0" layoutY="81.0" prefHeight="244.0" prefWidth="575.0" style="-fx-background-color: #FCFCFC; -fx-background-radius: 10px;">
                <children>
                   <Label layoutX="22.0" layoutY="48.0" text="Title" textFill="#1479ff">
                      <font>
@@ -85,7 +85,7 @@
                   </Pane>
                </children>
             </Pane>
-            <Pane layoutX="658.0" layoutY="367.0" prefHeight="374.0" prefWidth="575.0" style="-fx-background-color: #FCFCFC; -fx-background-radius: 10px;">
+            <Pane fx:id="borrowBookPaneParent" layoutX="658.0" layoutY="367.0" prefHeight="374.0" prefWidth="575.0" style="-fx-background-color: #FCFCFC; -fx-background-radius: 10px;">
                <children>
                   <Label layoutX="22.0" layoutY="73.0" text="Title" textFill="#1479ff">
                      <font>
@@ -168,7 +168,7 @@
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <Pane layoutX="42.0" layoutY="81.0" prefHeight="660.0" prefWidth="571.0" style="-fx-background-radius: 10px; -fx-background-color: #FCFCFC;">
+      <Pane fx:id="tablePane" layoutX="42.0" layoutY="81.0" prefHeight="660.0" prefWidth="571.0" style="-fx-background-radius: 10px; -fx-background-color: #FCFCFC;">
          <children>
             <TableView layoutX="13.0" layoutY="64.0" prefHeight="580.0" prefWidth="557.0" stylesheets="@../Style/Style.css">
                <columns>

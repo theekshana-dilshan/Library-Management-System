@@ -29,7 +29,16 @@ public class AdminDashboardFormController {
     private Pane booksIconPane;
 
     @FXML
+    private Pane availableBooksPane;
+
+    @FXML
     private Pane branchesIconPane;
+
+    @FXML
+    private Pane categoryPane;
+
+    @FXML
+    private Pane helloPane;
 
     @FXML
     private ImageView imgBooks;
@@ -64,10 +73,18 @@ public class AdminDashboardFormController {
     @FXML
     private Pane totalReadersPane;
 
+    @FXML
+    private Pane topReaderPane;
+
+    @FXML
+    private Pane totalBooksPane;
+
+    @FXML
+    private Pane totalBorrowedBooksPane;
+
     public void initialize(){
         imgDashBoardFocused();
-        /*totalReadersPane.setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, #599dff, 10, 0, 1, 2); -fx-background-radius: 10px;");*/
-        totalReadersPane.setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, #a9cdfa, 10, 0, 0, 6); -fx-background-radius: 10px;");
+        setShadowsToPanes();
     }
 
     @FXML
@@ -169,5 +186,16 @@ public class AdminDashboardFormController {
     void imgBranchesFocused(){
         lblBranches.setStyle("-fx-text-fill: #1479ff;");
         setImageToImageView(imgBranches, "C:\\Users\\ASUS\\Documents\\GitHub\\Library-Management-System\\src\\main\\resources\\assests\\icons8-houses-50 (1).png");
+    }
+
+    void setShadowsToPanes(){
+        /*totalReadersPane.setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, #599dff, 10, 0, 1, 2); -fx-background-radius: 10px;");*/
+        totalReadersPane.setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, #a9cdfa, 10, 0, 0, 6); -fx-background-radius: 10px;");
+        totalBooksPane.setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, #a9cdfa, 10, 0, 0, 6); -fx-background-radius: 10px;");
+        availableBooksPane.setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, #a9cdfa, 10, 0, 0, 6); -fx-background-radius: 10px;");
+        totalBorrowedBooksPane.setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, #a9cdfa, 10, 0, 0, 6); -fx-background-radius: 10px;");
+        topReaderPane.setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, #a9cdfa, 10, 0, 0, 6); -fx-background-radius: 10px;");
+        helloPane.setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, #a9cdfa, 10, 0, 0, 6); -fx-background-radius: 10px;");
+        categoryPane.setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, #a9cdfa, 10, 0, 0, 6); -fx-background-radius: 10px;");
     }
 }

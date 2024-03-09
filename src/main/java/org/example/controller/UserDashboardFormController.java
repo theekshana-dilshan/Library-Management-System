@@ -34,6 +34,12 @@ public class UserDashboardFormController {
     private ImageView imgDashBoard;
 
     @FXML
+    private Pane booksPane;
+
+    @FXML
+    private Pane helloPane;
+
+    @FXML
     private Label lblBooks;
 
     @FXML
@@ -46,10 +52,17 @@ public class UserDashboardFormController {
     private AnchorPane root;
 
     @FXML
+    private Pane statusPane;
+
+    @FXML
     private AnchorPane subRoot;
+
+    @FXML
+    private Pane topReaderPane;
 
     public void initialize(){
         imgDashBoardFocused();
+        setShadowsToPanes();
     }
 
     public void btnBorrowABookOnAction(javafx.event.ActionEvent actionEvent) throws IOException {
@@ -134,6 +147,13 @@ public class UserDashboardFormController {
     void imgBarrowedBooksFocused(){
         lblBooks1.setStyle("-fx-text-fill: #1479ff;");
         setImageToImageView(imgBarrowedBooks, "C:\\Users\\ASUS\\Documents\\GitHub\\Library-Management-System\\src\\main\\resources\\assests\\icons8-books-24 (1).png");
+    }
+
+    void setShadowsToPanes(){
+        booksPane.setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, #a9cdfa, 10, 0, 0, 6); -fx-background-radius: 10px;");
+        statusPane.setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, #a9cdfa, 10, 0, 0, 6); -fx-background-radius: 10px;");
+        topReaderPane.setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, #a9cdfa, 10, 0, 0, 6); -fx-background-radius: 10px;");
+        helloPane.setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, #a9cdfa, 10, 0, 0, 6); -fx-background-radius: 10px;");
     }
 
 }

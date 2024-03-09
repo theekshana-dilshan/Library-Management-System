@@ -65,7 +65,7 @@
       </AnchorPane>
       <AnchorPane fx:id="subRoot" layoutX="255.0" prefHeight="786.0" prefWidth="1282.0" style="-fx-background-color: #E5E9ED;">
          <children>
-            <Pane layoutX="778.0" layoutY="81.0" prefHeight="242.0" prefWidth="455.0" style="-fx-background-radius: 10px; -fx-background-color: #FCFCFC;">
+            <Pane fx:id="helloPane" layoutX="778.0" layoutY="81.0" prefHeight="242.0" prefWidth="455.0" style="-fx-background-radius: 10px; -fx-background-color: #FCFCFC;">
                <children>
                   <ImageView fitHeight="277.0" fitWidth="277.0" layoutX="204.0" layoutY="-11.0">
                      <image>
@@ -84,7 +84,7 @@
                   </JFXButton>
                </children>
             </Pane>
-            <Pane layoutX="496.0" layoutY="81.0" prefHeight="241.0" prefWidth="241.0" style="-fx-background-radius: 10px; -fx-background-color: #FCFCFC;">
+            <Pane fx:id="topReaderPane" layoutX="496.0" layoutY="81.0" prefHeight="241.0" prefWidth="241.0" style="-fx-background-radius: 10px; -fx-background-color: #FCFCFC;">
                <children>
                   <Label layoutX="22.0" layoutY="24.0" text="Top reader" textFill="#193b68">
                      <font>
@@ -108,13 +108,13 @@
                   <Font name="Arial Bold" size="18.0" />
                </font>
             </Label>
-            <Pane layoutX="496.0" layoutY="362.0" prefHeight="379.0" prefWidth="737.0" style="-fx-background-radius: 10px; -fx-background-color: #FCFCFC;" />
+            <Pane fx:id="statusPane" layoutX="496.0" layoutY="362.0" prefHeight="379.0" prefWidth="737.0" style="-fx-background-radius: 10px; -fx-background-color: #FCFCFC;" />
             <Label alignment="CENTER_RIGHT" layoutX="1026.0" layoutY="26.0" prefHeight="18.0" prefWidth="208.0" text="20. february. 2024" textFill="#193b68">
                <font>
                   <Font name="Arial" size="14.0" />
                </font>
             </Label>
-            <Pane layoutX="42.0" layoutY="81.0" prefHeight="660.0" prefWidth="414.0" style="-fx-background-radius: 10px; -fx-background-color: #FCFCFC;">
+            <Pane fx:id="booksPane" layoutX="42.0" layoutY="81.0" prefHeight="660.0" prefWidth="414.0" style="-fx-background-radius: 10px; -fx-background-color: #FCFCFC;">
                <children>
                   <TableView layoutX="13.0" layoutY="14.0" prefHeight="630.0" prefWidth="400.0" stylesheets="@../Style/Style.css">
                     <columns>
