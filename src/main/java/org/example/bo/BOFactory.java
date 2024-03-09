@@ -1,6 +1,11 @@
 package org.example.bo;
 
 
+import org.example.bo.custom.impl.AdminBoImpl;
+import org.example.bo.custom.impl.BooksBoImpl;
+import org.example.bo.custom.impl.BranchesBoImpl;
+import org.example.bo.custom.impl.UserBoImpl;
+
 public class BOFactory {
     private static BOFactory boFactory;
     private BOFactory(){
@@ -10,14 +15,20 @@ public class BOFactory {
         return (boFactory==null)?boFactory=new BOFactory():boFactory;
     }
     public enum BOTypes{
-        STUDENT
+        ADMIN, USER, BOOKS, BRANCHES
     }
-    /*public SuperBO getBO(BOTypes boTypes){
+    public SuperBO getBO(BOTypes boTypes){
         switch (boTypes){
-            case STUDENT:
-                return new StudentBoImpl();
+            case ADMIN:
+                return new AdminBoImpl();
+            case USER:
+                return new UserBoImpl();
+            case BOOKS:
+                return new BooksBoImpl();
+            case BRANCHES:
+                return new BranchesBoImpl();
             default:
                 return null;
         }
-    }*/
+    }
 }

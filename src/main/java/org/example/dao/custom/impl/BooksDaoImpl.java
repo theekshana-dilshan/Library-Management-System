@@ -1,4 +1,6 @@
 package org.example.dao.custom.impl;
 
-public class BooksDaoImpl {
+import org.example.dao.custom.BooksDAO;
+
+public class BooksDaoImpl implements BooksDAO {
 }

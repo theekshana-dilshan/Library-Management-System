@@ -1,4 +1,6 @@
 package org.example.bo.custom.impl;
 
-public class BooksBoImpl {
+import org.example.bo.custom.BooksBO;
+
+public class BooksBoImpl implements BooksBO {
 }

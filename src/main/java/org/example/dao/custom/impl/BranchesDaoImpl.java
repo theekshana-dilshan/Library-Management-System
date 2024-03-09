@@ -1,4 +1,6 @@
 package org.example.dao.custom.impl;
 
-public class BranchesDaoImpl {
+import org.example.dao.custom.BranchesDAO;
+
+public class BranchesDaoImpl implements BranchesDAO {
 }

@@ -1,4 +1,6 @@
 package org.example.bo.custom.impl;
 
-public class UserBoImpl {
+import org.example.bo.custom.UserBO;
+
+public class UserBoImpl implements UserBO {
 }

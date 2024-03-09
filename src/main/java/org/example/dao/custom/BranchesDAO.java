@@ -1,4 +1,7 @@
 package org.example.dao.custom;
 
-public interface BranchesDAO {
+import org.example.dao.CrudDAO;
+import org.example.entity.Branches;
+
+public interface BranchesDAO extends CrudDAO<Branches> {
 }

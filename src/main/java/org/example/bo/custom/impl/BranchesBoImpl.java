@@ -1,4 +1,6 @@
 package org.example.bo.custom.impl;
 
-public class BranchesBoImpl {
+import org.example.bo.custom.BranchesBO;
+
+public class BranchesBoImpl implements BranchesBO {
 }

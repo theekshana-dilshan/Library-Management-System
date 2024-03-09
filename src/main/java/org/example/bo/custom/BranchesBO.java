@@ -1,4 +1,6 @@
 package org.example.bo.custom;
 
-public interface BranchesBO {
+import org.example.bo.SuperBO;
+
+public interface BranchesBO extends SuperBO {
 }

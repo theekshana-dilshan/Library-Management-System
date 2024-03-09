@@ -1,4 +1,6 @@
 package org.example.dao.custom.impl;
 
-public class AdminDaoImpl {
+import org.example.dao.custom.AdminDAO;
+
+public class AdminDaoImpl implements AdminDAO {
 }

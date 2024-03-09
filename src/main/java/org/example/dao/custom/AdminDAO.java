@@ -1,4 +1,7 @@
 package org.example.dao.custom;
 
-public interface AdminDAO {
+import org.example.dao.CrudDAO;
+import org.example.entity.Admin;
+
+public interface AdminDAO extends CrudDAO<Admin> {
 }
