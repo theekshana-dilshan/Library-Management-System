@@ -54,11 +54,10 @@
               <columns>
                 <TableColumn fx:id="colBookId" minWidth="0.0" prefWidth="83.19997787475586" text="Book ID" />
                 <TableColumn fx:id="colTitle" prefWidth="366.3999786376953" text="Title" />
-                  <TableColumn fx:id="colAuthor" prefWidth="213.60003662109375" text="Author" />
-                  <TableColumn fx:id="colGenre" prefWidth="158.4000244140625" text="Genre" />
-                  <TableColumn fx:id="colAvailability" prefWidth="139.20001220703125" text="Avalability" />
-                  <TableColumn fx:id="colUpdate" prefWidth="105.60003662109375" text="Update" />
-                  <TableColumn fx:id="colRemove" prefWidth="107.2000732421875" text="Remove" />
+                  <TableColumn fx:id="colAuthor" prefWidth="249.59994506835938" text="Author" />
+                  <TableColumn fx:id="colGenre" prefWidth="212.800048828125" text="Genre" />
+                  <TableColumn fx:id="colAvailability" prefWidth="140.0" text="Avalability" />
+                  <TableColumn fx:id="colRemove" prefWidth="124.7999267578125" text="Remove" />
               </columns>
             </TableView>
             <JFXButton layoutX="1138.0" layoutY="217.0" onAction="#btnClearOnAction" prefHeight="34.0" prefWidth="78.0" style="-fx-background-color: #1479ff;" text="Clear" textFill="WHITE">

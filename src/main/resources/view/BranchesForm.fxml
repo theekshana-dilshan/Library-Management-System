@@ -60,14 +60,13 @@
                </font>
             </Label>
             <JFXComboBox fx:id="cmbStatus" layoutX="962.0" layoutY="137.0" prefHeight="34.0" prefWidth="255.0" promptText="Open or Close" style="-fx-text-fill: #193b68; -fx-prompt-text-fill: #193b68;" />
-            <TableView fx:id="tblBanches" layoutX="41.0" layoutY="296.0" prefHeight="450.0" prefWidth="1189.0" style="-fx-text-fill: #193b68;" stylesheets="@../Style/Style.css">
+            <TableView fx:id="tblBranches" layoutX="41.0" layoutY="296.0" prefHeight="450.0" prefWidth="1189.0" style="-fx-text-fill: #193b68;" stylesheets="@../Style/Style.css">
                <columns>
                   <TableColumn fx:id="colCode" prefWidth="146.3999900817871" text="Code" />
-                  <TableColumn fx:id="colLocation" prefWidth="424.8000030517578" text="Location" />
-                  <TableColumn fx:id="colContact" prefWidth="212.0" text="Contact number" />
-                  <TableColumn fx:id="colStatus" prefWidth="149.5999755859375" text="Status" />
-                  <TableColumn fx:id="colUpdate" prefWidth="129.60003662109375" text="Update" />
-                  <TableColumn fx:id="colRemove" prefWidth="112.800048828125" text="Remove" />
+                  <TableColumn fx:id="colLocation" prefWidth="492.0" text="Location" />
+                  <TableColumn fx:id="colContact" prefWidth="236.0" text="Contact number" />
+                  <TableColumn fx:id="colStatus" prefWidth="160.800048828125" text="Status" />
+                  <TableColumn fx:id="colRemove" prefWidth="144.0" text="Remove" />
                </columns>
             </TableView>
             <JFXButton layoutX="1138.0" layoutY="217.0" onAction="#btnClearOnAction" prefHeight="34.0" prefWidth="78.0" style="-fx-background-color: #1479ff;" text="Clear" textFill="WHITE">

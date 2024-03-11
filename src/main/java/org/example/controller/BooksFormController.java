@@ -32,9 +32,6 @@ public class BooksFormController {
     private TableColumn<?, ?> colTitle;
 
     @FXML
-    private TableColumn<?, ?> colUpdate;
-
-    @FXML
     private AnchorPane subRoot;
 
     @FXML

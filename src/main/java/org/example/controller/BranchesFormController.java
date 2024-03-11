@@ -31,13 +31,10 @@ public class BranchesFormController {
     private TableColumn<?, ?> colStatus;
 
     @FXML
-    private TableColumn<?, ?> colUpdate;
-
-    @FXML
     private AnchorPane subRoot;
 
     @FXML
-    private TableView<?> tblBanches;
+    private TableView<?> tblBranches;
 
     @FXML
     private JFXTextField txtBranchCode;
