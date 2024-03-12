@@ -6,6 +6,8 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
 
+import java.time.LocalDate;
+
 public class BorrowedBooksFormController {
 
     @FXML
@@ -39,13 +41,20 @@ public class BorrowedBooksFormController {
     private Label lblReadCount;
 
     @FXML
+    private Label lblDate;
+
+    @FXML
     private AnchorPane subRoot;
 
     @FXML
     private TableView<?> tblBorrowedBooks;
 
     public void initialize(){
+        setDate();
+    }
 
+    private void setDate() {
+        lblDate.setText(String.valueOf(LocalDate.now()));
     }
 
 }

@@ -104,4 +104,20 @@ public class BooksDaoImpl implements BooksDAO {
         session.close();
         return rowsUpdated>0;
     }
+
+    @Override
+    public Books getBookByTitle(String bookName) {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        Query<Books> query = session.createQuery("FROM Books WHERE title= : bookName",Books.class);
+        query.setParameter("bookName", bookName);
+
+        Books book = query.getSingleResult();
+
+        transaction.commit();
+        session.close();
+
+        return book;
+    }
 }

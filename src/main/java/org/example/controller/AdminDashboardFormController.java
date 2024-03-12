@@ -13,6 +13,7 @@ import org.jetbrains.annotations.NotNull;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDate;
 
 
 public class AdminDashboardFormController {
@@ -48,6 +49,9 @@ public class AdminDashboardFormController {
     private Label lblDashBoard;
 
     @FXML
+    private Label lblDate;
+
+    @FXML
     private Label lblUsers;
 
     @FXML
@@ -71,6 +75,7 @@ public class AdminDashboardFormController {
     public void initialize(){
         imgDashBoardFocused();
         setShadowsToPanes();
+        setDate();
     }
 
     @FXML
@@ -183,5 +188,9 @@ public class AdminDashboardFormController {
         topReaderPane.setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, #a9cdfa, 10, 0, 0, 6); -fx-background-radius: 10px;");
         helloPane.setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, #a9cdfa, 10, 0, 0, 6); -fx-background-radius: 10px;");
         categoryPane.setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, #a9cdfa, 10, 0, 0, 6); -fx-background-radius: 10px;");
+    }
+
+    private void setDate() {
+        lblDate.setText(String.valueOf(LocalDate.now()));
     }
 }

@@ -71,5 +71,10 @@
             <TableColumn fx:id="colReturn" prefWidth="136.800048828125" text="return" />
          </columns>
       </TableView>
+      <Label fx:id="lblDate" alignment="CENTER_RIGHT" layoutX="1026.0" layoutY="26.0" prefHeight="18.0" prefWidth="208.0" text="20. february. 2024" textFill="#193b68">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

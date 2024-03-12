@@ -1,17 +1,28 @@
 package org.example.controller;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import org.example.bo.BOFactory;
+import org.example.bo.custom.BooksBO;
+import org.example.dto.BooksDTO;
+import org.example.tm.OurBooksTm;
 
-import java.awt.event.ActionEvent;
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserDashboardFormController {
 
@@ -49,6 +60,9 @@ public class UserDashboardFormController {
     private Label lblDashBoard;
 
     @FXML
+    private Label lblDate;
+
+    @FXML
     private AnchorPane root;
 
     @FXML
@@ -58,11 +72,45 @@ public class UserDashboardFormController {
     private AnchorPane subRoot;
 
     @FXML
+    private TableView<OurBooksTm> tblBooks;
+
+    @FXML
+    private TableColumn<?, ?> colBookName;
+
+    @FXML
     private Pane topReaderPane;
+
+    private BooksBO booksBO= (BooksBO) BOFactory.getBOFactory().getBO(BOFactory.BOTypes.BOOKS);
+
+    private ObservableList<OurBooksTm> obList;
 
     public void initialize(){
         imgDashBoardFocused();
         setShadowsToPanes();
+        setDate();
+        setCellValue();
+        loadAllBooks();
+    }
+
+    private void setCellValue() {
+        colBookName.setCellValueFactory(new PropertyValueFactory<>("bookName"));
+    }
+
+    public void loadAllBooks(){
+        obList= FXCollections.observableArrayList();
+        List<BooksDTO> allBooks = booksBO.getAllBooks();
+        List<String> suggestionList = new ArrayList<>();
+
+        for (BooksDTO dto: allBooks){
+            suggestionList.add(String.valueOf(dto.getId()));
+
+
+            obList.add(new OurBooksTm(
+                    dto.getTitle()
+            ));
+        }
+
+        tblBooks.setItems(obList);
     }
 
     public void btnBorrowABookOnAction(javafx.event.ActionEvent actionEvent) throws IOException {
@@ -154,6 +202,10 @@ public class UserDashboardFormController {
         statusPane.setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, #a9cdfa, 10, 0, 0, 6); -fx-background-radius: 10px;");
         topReaderPane.setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, #a9cdfa, 10, 0, 0, 6); -fx-background-radius: 10px;");
         helloPane.setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, #a9cdfa, 10, 0, 0, 6); -fx-background-radius: 10px;");
+    }
+
+    private void setDate() {
+        lblDate.setText(String.valueOf(LocalDate.now()));
     }
 
 }

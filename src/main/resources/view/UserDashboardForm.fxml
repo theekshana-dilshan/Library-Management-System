@@ -109,16 +109,16 @@
                </font>
             </Label>
             <Pane fx:id="statusPane" layoutX="496.0" layoutY="362.0" prefHeight="379.0" prefWidth="737.0" style="-fx-background-radius: 10px; -fx-background-color: #FCFCFC;" />
-            <Label alignment="CENTER_RIGHT" layoutX="1026.0" layoutY="26.0" prefHeight="18.0" prefWidth="208.0" text="20. february. 2024" textFill="#193b68">
+            <Label fx:id="lblDate" alignment="CENTER_RIGHT" layoutX="1026.0" layoutY="26.0" prefHeight="18.0" prefWidth="208.0" text="20. february. 2024" textFill="#193b68">
                <font>
                   <Font name="Arial" size="14.0" />
                </font>
             </Label>
             <Pane fx:id="booksPane" layoutX="42.0" layoutY="81.0" prefHeight="660.0" prefWidth="414.0" style="-fx-background-radius: 10px; -fx-background-color: #FCFCFC;">
                <children>
-                  <TableView layoutX="13.0" layoutY="14.0" prefHeight="630.0" prefWidth="400.0" stylesheets="@../Style/Style.css">
+                  <TableView fx:id="tblBooks" layoutX="13.0" layoutY="14.0" prefHeight="630.0" prefWidth="400.0" stylesheets="@../Style/Style.css">
                     <columns>
-                      <TableColumn prefWidth="386.4000244140625" text="Our Books" />
+                      <TableColumn fx:id="colBookName" prefWidth="386.4000244140625" text="Our Books" />
                     </columns>
                   </TableView>
                </children>

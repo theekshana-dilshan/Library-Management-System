@@ -341,7 +341,7 @@
                      </children>
                   </Pane>
                </children></Pane>
-            <Label alignment="CENTER_RIGHT" layoutX="1011.0" layoutY="25.0" prefHeight="18.0" prefWidth="208.0" text="20, february, 2024" textFill="#193b68">
+            <Label fx:id="lblDate" alignment="CENTER_RIGHT" layoutX="1011.0" layoutY="25.0" prefHeight="18.0" prefWidth="208.0" text="20, february, 2024" textFill="#193b68">
                <font>
                   <Font name="Arial" size="14.0" />
                </font>
