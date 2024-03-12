@@ -1,20 +1,19 @@
 package org.example.tm;
 
+import javafx.scene.control.Button;
 import lombok.*;
 
-import java.awt.*;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class borrowedBookTm {
+public class BooksTm {
     private String bookId;
     private String title;
     private String author;
     private String genre;
-    private String borrowDate;
-    private String returnDate;
-    private Button returnBook;
+    private String availability;
+    private Button remove;
 }

@@ -48,7 +48,7 @@
                   <Font name="Arial Bold" size="14.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="txtSearch" layoutX="943.0" layoutY="25.0" onAction="#txtSearchOnAction" prefHeight="34.0" prefWidth="216.0" style="-fx-text-fill: #193b68;" />
+            <JFXTextField fx:id="txtSearch" layoutX="943.0" layoutY="25.0" prefHeight="34.0" prefWidth="216.0" style="-fx-text-fill: #193b68;" />
             <JFXButton layoutX="1156.0" layoutY="27.0" onAction="#btnSearchOnAction" prefHeight="33.0" prefWidth="62.0" style="-fx-border-color: #1479ff; -fx-border-radius: 5px;" text="Search" textFill="#193b68">
                <font>
                   <Font name="Arial Bold" size="12.0" />
@@ -63,10 +63,10 @@
             <TableView fx:id="tblBranches" layoutX="41.0" layoutY="296.0" prefHeight="450.0" prefWidth="1189.0" style="-fx-text-fill: #193b68;" stylesheets="@../Style/Style.css">
                <columns>
                   <TableColumn fx:id="colCode" prefWidth="146.3999900817871" text="Code" />
-                  <TableColumn fx:id="colLocation" prefWidth="492.0" text="Location" />
-                  <TableColumn fx:id="colContact" prefWidth="236.0" text="Contact number" />
-                  <TableColumn fx:id="colStatus" prefWidth="160.800048828125" text="Status" />
-                  <TableColumn fx:id="colRemove" prefWidth="144.0" text="Remove" />
+                  <TableColumn fx:id="colLocation" prefWidth="473.59999084472656" text="Location" />
+                  <TableColumn fx:id="colContact" prefWidth="217.5999755859375" text="Contact number" />
+                  <TableColumn fx:id="colStatus" prefWidth="175.20013427734375" text="Status" />
+                  <TableColumn fx:id="colRemove" prefWidth="175.20013427734375" text="Remove" />
                </columns>
             </TableView>
             <JFXButton layoutX="1138.0" layoutY="217.0" onAction="#btnClearOnAction" prefHeight="34.0" prefWidth="78.0" style="-fx-background-color: #1479ff;" text="Clear" textFill="WHITE">

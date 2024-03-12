@@ -1,5 +1,6 @@
 package org.example.tm;
 
+import javafx.scene.control.Button;
 import lombok.*;
 
 import java.awt.*;
@@ -9,7 +10,7 @@ import java.awt.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class branchesTm {
+public class BranchesTm {
     private String code;
     private String location;
     private String contactNumber;

@@ -7,7 +7,6 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class borrowBookTm {
+public class OurBooksTm {
     private String bookName;
-    private String genre;
 }

@@ -23,7 +23,7 @@ import org.example.bo.BOFactory;
 import org.example.bo.custom.BooksBO;
 import org.example.dto.BooksDTO;
 import org.example.entity.Branches;
-import org.example.tm.booksTm;
+import org.example.tm.BooksTm;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,7 +56,7 @@ public class BooksFormController {
     private AnchorPane subRoot;
 
     @FXML
-    private TableView<booksTm> tblBooks;
+    private TableView<BooksTm> tblBooks;
 
     @FXML
     private JFXTextField txtAuthor;
@@ -72,7 +72,7 @@ public class BooksFormController {
 
     private BooksBO booksBO= (BooksBO) BOFactory.getBOFactory().getBO(BOFactory.BOTypes.BOOKS);
 
-    private ObservableList<booksTm> obList;
+    private ObservableList<BooksTm> obList;
 
     public void initialize(){
         setCellValue();
@@ -156,7 +156,7 @@ public class BooksFormController {
                 available="notAvailable";
             }
 
-            obList.add(new booksTm(
+            obList.add(new BooksTm(
                     dto.getId(),
                     dto.getTitle(),
                     dto.getAuthor(),
@@ -180,24 +180,24 @@ public class BooksFormController {
     }
 
     public void searchTable() {
-        FilteredList<booksTm> filteredData = new FilteredList<>(obList, b -> true);
+        FilteredList<BooksTm> filteredData = new FilteredList<>(obList, b -> true);
 
         txtSearchBar.textProperty().addListener((observable, oldValue, newValue) -> {
-            filteredData.setPredicate(booksTm -> {
+            filteredData.setPredicate(BooksTm -> {
                 if (newValue == null || newValue.isEmpty()) {
                     return true;
                 }
 
                 String lowerCaseFilter = newValue.toLowerCase();
-                String bookId = String.valueOf(booksTm.getBookId());
-                String title = booksTm.getTitle().toLowerCase();
-                String genre = booksTm.getGenre().toLowerCase();
+                String bookId = String.valueOf(BooksTm.getBookId());
+                String title = BooksTm.getTitle().toLowerCase();
+                String genre = BooksTm.getGenre().toLowerCase();
 
                 return bookId.contains(lowerCaseFilter) || title.contains(lowerCaseFilter) || genre.contains(lowerCaseFilter);
             });
         });
 
-        SortedList<booksTm> sortedData = new SortedList<>(filteredData);
+        SortedList<BooksTm> sortedData = new SortedList<>(filteredData);
         sortedData.comparatorProperty().bind(tblBooks.comparatorProperty());
         tblBooks.setItems(sortedData);
     }
@@ -212,7 +212,7 @@ public class BooksFormController {
 
             if (type.orElse(no) == yes) {
                 int focusedIndex = tblBooks.getSelectionModel().getSelectedIndex();
-                booksTm bookTm = (booksTm) tblBooks.getSelectionModel().getSelectedItem();
+                BooksTm bookTm = (BooksTm) tblBooks.getSelectionModel().getSelectedItem();
 
                 if (bookTm != null) {
                     String bookId = bookTm.getBookId();
@@ -236,6 +236,7 @@ public class BooksFormController {
             }
         });
     }
+
     @FXML
     void btnClearOnAction(ActionEvent event) {
         clearField();
