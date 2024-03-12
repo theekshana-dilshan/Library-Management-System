@@ -1,8 +1,8 @@
 package org.example.tm;
 
+import javafx.scene.control.Button;
 import lombok.*;
 
-import java.awt.*;
 
 @Getter
 @Setter

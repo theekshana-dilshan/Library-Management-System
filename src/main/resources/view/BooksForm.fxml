@@ -38,7 +38,7 @@
                   <Font name="Arial Bold" size="14.0" />
                </font>
             </Label>
-            <JFXTextField layoutX="943.0" layoutY="25.0" onAction="#txtSearchOnAction" prefHeight="34.0" prefWidth="216.0" style="-fx-text-fill: #193b68;" />
+            <JFXTextField fx:id="txtSearchBar" layoutX="943.0" layoutY="25.0" prefHeight="34.0" prefWidth="216.0" style="-fx-text-fill: #193b68;" />
             <JFXButton layoutX="1156.0" layoutY="27.0" onAction="#btnSearchOnAction" prefHeight="33.0" prefWidth="62.0" style="-fx-border-color: #1479ff; -fx-border-radius: 5px;" text="Search" textFill="#193b68">
                <font>
                   <Font name="Arial Bold" size="12.0" />
