@@ -22,14 +22,20 @@ import org.controlsfx.control.textfield.TextFields;
 import org.example.bo.BOFactory;
 import org.example.bo.custom.BooksBO;
 import org.example.dto.BooksDTO;
+import org.example.dto.UserDTO;
 import org.example.entity.Branches;
 import org.example.tm.BooksTm;
+import org.example.tm.UsersTm;
 
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 public class BooksFormController {
+
+    @FXML
+    private JFXComboBox<String> cmbAvailability;
 
     @FXML
     private JFXComboBox<String> cmbGenre;
@@ -76,7 +82,8 @@ public class BooksFormController {
 
     public void initialize(){
         setCellValue();
-        setComboBoxItems();
+        setGenreComboBoxItems();
+        setAvailabilityComboBoxItems();
         loadAllBooks();
         searchTable();
     }
@@ -106,9 +113,9 @@ public class BooksFormController {
                 e.printStackTrace();
             }
         }else {
-            String value = "available";
+            String value = cmbAvailability.getValue();
             boolean available;
-            if (value.equals("available")){
+            if (value.equals("Available")){
                 available = true;
             }else {
                 available=false;
@@ -312,9 +319,9 @@ public class BooksFormController {
                 e.printStackTrace();
             }
         }else {
-            String value = "availble";/*(String) availabilityStatus.getValue();*/
+            String value = (String) cmbAvailability.getValue();
             boolean available;
-            if (value.equals("available")){
+            if (value.equals("Available")){
                 available = true;
             }else {
                 available=false;
@@ -346,7 +353,33 @@ public class BooksFormController {
         }
     }
 
-    void setComboBoxItems(){
+    @FXML
+    void selectBookOnAction(javafx.scene.input.MouseEvent mouseEvent) {
+        int focusedIndex = tblBooks.getSelectionModel().getSelectedIndex();
+        BooksTm booksTm = (BooksTm) tblBooks.getSelectionModel().getSelectedItem();
+
+        if (booksTm != null) {
+            String bookId = booksTm.getBookId();
+            BooksDTO booksDTO = new BooksDTO();
+            booksDTO = booksBO.searchBook(bookId);
+
+            txtBookId.setText(booksDTO.getId());
+            txtTitle.setText(booksDTO.getTitle());
+            txtAuthor.setText(booksDTO.getAuthor());
+            cmbGenre.setValue(booksDTO.getGenre());
+            String available;
+            if (booksDTO.isAvailability()){
+                available="Available";
+            }else{
+                available="Not-available";
+            }
+            cmbAvailability.setValue(available);
+
+            searchTable();
+        }
+    }
+
+    void setGenreComboBoxItems(){
         ObservableList<String> obList = FXCollections.observableArrayList();
 
         String romance = "Romance";
@@ -380,6 +413,18 @@ public class BooksFormController {
         obList.add(memoir);
 
         cmbGenre.setItems(obList);
+    }
+
+    void setAvailabilityComboBoxItems(){
+        ObservableList<String> obList = FXCollections.observableArrayList();
+
+        String available = "Available";
+        String notAvailable = "Not-available";
+
+        obList.add(available);
+        obList.add(notAvailable);
+
+        cmbAvailability.setItems(obList);
     }
 
     private boolean isEmptyCheck() {
@@ -416,6 +461,7 @@ public class BooksFormController {
         txtTitle.clear();
         txtAuthor.clear();
         cmbGenre.setValue("Select genre");
+        cmbAvailability.setValue("Select availability");
     }
 
 }

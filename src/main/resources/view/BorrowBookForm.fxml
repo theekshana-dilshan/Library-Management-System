@@ -2,8 +2,8 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.CheckBox?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -128,7 +128,6 @@
                      </font>
                   </Label>
                   <JFXComboBox fx:id="cmbBranchSelect" labelFloat="true" layoutX="322.0" layoutY="91.0" prefHeight="25.0" prefWidth="218.0" promptText="book borrowing branch" style="-fx-text-fill: #193b68; -fx-prompt-text-fill: #1479ff;" />
-                  <DatePicker fx:id="datePickerReturnDate" layoutX="322.0" layoutY="221.0" prefHeight="25.0" prefWidth="218.0" />
                   <Label layoutX="322.0" layoutY="206.0" text="Return Date" textFill="#1479ff">
                      <font>
                         <Font name="Arial Bold" size="12.0" />
@@ -144,7 +143,12 @@
                         <Font name="Arial" size="14.0" />
                      </font>
                   </Label>
-                  <CheckBox fx:id="checkBoxAcceptTerms" layoutX="42.0" layoutY="312.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="276.0" style="-fx-text-fill: #1479FF;" text="You must return book before or on return date" textAlignment="CENTER" />
+                  <CheckBox fx:id="checkBoxAcceptTerms" layoutX="42.0" layoutY="312.0" mnemonicParsing="false" onAction="#checkBoxOnAction" prefHeight="43.0" prefWidth="276.0" style="-fx-text-fill: #1479FF;" text="You must return book before or on return date" textAlignment="CENTER" />
+                  <Label fx:id="lblReturnDate" layoutX="323.0" layoutY="224.0" prefHeight="18.0" prefWidth="218.0" text="20. february. 2024" textFill="#193b68">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </Label>
                   <Pane fx:id="BorrowBookPane" layoutX="14.0" layoutY="34.0" prefHeight="335.0" prefWidth="546.0" style="-fx-background-color: #FCFCFC;">
                      <children>
                         <ImageView fitHeight="274.0" fitWidth="276.0" layoutX="246.0" layoutY="74.0">
@@ -181,6 +185,7 @@
                   <Font name="Arial Bold" size="12.0" />
                </font>
             </Label>
+            <JFXTextField fx:id="txtSearch" layoutX="292.0" layoutY="18.0" prefHeight="25.0" prefWidth="265.0" />
          </children>
       </Pane>
    </children>

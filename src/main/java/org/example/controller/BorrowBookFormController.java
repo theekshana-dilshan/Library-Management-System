@@ -2,8 +2,11 @@ package org.example.controller;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
@@ -35,8 +38,11 @@ import java.util.List;
 public class BorrowBookFormController {
 
     public CheckBox checkBoxAcceptTerms;
+
+    @FXML
+    private Label lblReturnDate;
+
     public Label lblTodayDate;
-    public DatePicker datePickerReturnDate;
     public JFXComboBox cmbBranchSelect;
     public Label lblAuthorOnBorrowBook;
     public Label lblgenreOnBorrowBook;
@@ -89,6 +95,9 @@ public class BorrowBookFormController {
     @FXML
     private TableView<BorrowBookTm> tblBorrowBook;
 
+    @FXML
+    private JFXTextField txtSearch;
+
     private BooksBO booksBO= (BooksBO) BOFactory.getBOFactory().getBO(BOFactory.BOTypes.BOOKS);
 
     private ObservableList<BorrowBookTm> obList;
@@ -101,6 +110,7 @@ public class BorrowBookFormController {
         setCellValue();
         loadAllBooks();
         setCmbBranchSelect();
+        searchTable();
     }
 
     private void setCellValue() {
@@ -155,6 +165,7 @@ public class BorrowBookFormController {
             }
             BooksDetailsPane.setVisible(false);
             BorrowBookPane.setVisible(true);
+            searchTable();
         }
     }
 
@@ -166,6 +177,11 @@ public class BorrowBookFormController {
         lblgenreOnBorrowBook.setText(lblGenre.getText());
         lblAuthorOnBorrowBook.setText(lblAuthor.getText());
         lblTodayDate.setText(lblDate.getText());
+        lblReturnDate.setText(java.time.LocalDate.now().plusDays(14).toString());
+        btnComfirm.setDisable(true);
+        checkBoxAcceptTerms.setSelected(false);
+        searchTable();
+
     }
 
     void setShadowsToPanes(){
@@ -176,6 +192,37 @@ public class BorrowBookFormController {
 
     public void btnComfirmOnAction(ActionEvent actionEvent) {
 
+    }
+
+    public void searchTable() {
+        FilteredList<BorrowBookTm> filteredData = new FilteredList<>(obList, b -> true);
+
+        txtSearch.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredData.setPredicate(BorrowBookTm -> {
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+
+                String lowerCaseFilter = newValue.toLowerCase();
+                String title = BorrowBookTm.getBookName().toLowerCase();
+                String genre = BorrowBookTm.getGenre().toLowerCase();
+
+                return title.contains(lowerCaseFilter) || genre.contains(lowerCaseFilter);
+            });
+        });
+
+        SortedList<BorrowBookTm> sortedData = new SortedList<>(filteredData);
+        sortedData.comparatorProperty().bind(tblBorrowBook.comparatorProperty());
+        tblBorrowBook.setItems(sortedData);
+    }
+
+    @FXML
+    void checkBoxOnAction(ActionEvent event) {
+        if (checkBoxAcceptTerms.isSelected()){
+            btnComfirm.setDisable(false);
+        }else{
+            btnComfirm.setDisable(true);
+        }
     }
 
     public void setCmbBranchSelect(){
@@ -194,5 +241,3 @@ public class BorrowBookFormController {
         lblDate.setText(String.valueOf(LocalDate.now()));
     }
 }
-
-

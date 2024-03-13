@@ -1,5 +1,6 @@
 package org.example.tm;
 
+import javafx.scene.control.Button;
 import lombok.*;
 
 import java.awt.*;
@@ -13,7 +14,5 @@ public class UsersTm {
     private String userId;
     private String userName;
     private String email;
-    private String borrowedBooks;
-    private String booksToReturn;
     private Button delete;
 }

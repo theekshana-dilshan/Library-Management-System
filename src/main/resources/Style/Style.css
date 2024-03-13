@@ -40,6 +40,11 @@
     -fx-padding: 0.0em;
 }
 
+.table-row-cell:selected{
+    -fx-background-color: #69a9ff;
+    -fx-background-radius: 15px;
+}
+
 .table-view .virtual-flow .scroll-bar:vertical,
 .table-view .virtual-flow .scroll-bar:vertical .track,
 .table-view .virtual-flow .scroll-bar:vertical .track-background,
@@ -60,9 +65,4 @@
 }
 .table-view .virtual-flow .scroll-bar:horizontal .thumb {
     -fx-background-color:  linear-gradient(to right, #5ea2ff, #d2e4fd);
-}
-
-.table-row-cell:highlighted {
-    -fx-background-color: #1479ff;
-    -fx-background-radius: 15px;
 }
