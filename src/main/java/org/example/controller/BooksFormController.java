@@ -22,12 +22,9 @@ import org.controlsfx.control.textfield.TextFields;
 import org.example.bo.BOFactory;
 import org.example.bo.custom.BooksBO;
 import org.example.dto.BooksDTO;
-import org.example.dto.UserDTO;
 import org.example.entity.Branches;
 import org.example.tm.BooksTm;
-import org.example.tm.UsersTm;
 
-import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;

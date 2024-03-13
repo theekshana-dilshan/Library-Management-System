@@ -21,8 +21,10 @@ import org.controlsfx.control.Notifications;
 import org.controlsfx.control.textfield.TextFields;
 import org.example.bo.BOFactory;
 import org.example.bo.custom.BranchesBO;
+import org.example.dto.BooksDTO;
 import org.example.dto.BranchesDTO;
 import org.example.entity.Books;
+import org.example.tm.BooksTm;
 import org.example.tm.BranchesTm;
 
 import java.util.ArrayList;
@@ -337,11 +339,30 @@ public class BranchesFormController {
         }
     }
 
+    @FXML
+    void selectBranchOnAction(javafx.scene.input.MouseEvent mouseEvent) {
+        int focusedIndex = tblBranches.getSelectionModel().getSelectedIndex();
+        BranchesTm branchesTm = (BranchesTm) tblBranches.getSelectionModel().getSelectedItem();
+
+        if (branchesTm != null) {
+            String branchCode = branchesTm.getCode();
+            BranchesDTO branchesDTO = new BranchesDTO();
+            branchesDTO = branchesBO.searchBranch(branchCode);
+
+            txtBranchCode.setText(branchesDTO.getCode());
+            txtLocation.setText(branchesDTO.getLocation());
+            txtContact.setText(branchesDTO.getContactNumber());
+            cmbStatus.setValue(branchesDTO.getStatus());
+
+            searchTable();
+        }
+    }
+
     void setComboBoxItems(){
         ObservableList<String> obList = FXCollections.observableArrayList();
 
         String open = "Open";
-        String close = "Close";
+        String close = "Closed";
 
         obList.add(open);
         obList.add(close);

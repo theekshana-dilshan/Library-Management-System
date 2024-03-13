@@ -60,7 +60,7 @@
                </font>
             </Label>
             <JFXComboBox fx:id="cmbStatus" layoutX="962.0" layoutY="137.0" prefHeight="34.0" prefWidth="255.0" promptText="Open or Close" style="-fx-text-fill: #193b68; -fx-prompt-text-fill: #193b68;" />
-            <TableView fx:id="tblBranches" layoutX="41.0" layoutY="296.0" prefHeight="450.0" prefWidth="1189.0" style="-fx-text-fill: #193b68;" stylesheets="@../Style/Style.css">
+            <TableView fx:id="tblBranches" layoutX="41.0" layoutY="296.0" onMouseClicked="#selectBranchOnAction" prefHeight="450.0" prefWidth="1189.0" style="-fx-text-fill: #193b68;" stylesheets="@../Style/Style.css">
                <columns>
                   <TableColumn fx:id="colCode" prefWidth="146.3999900817871" text="Code" />
                   <TableColumn fx:id="colLocation" prefWidth="473.59999084472656" text="Location" />
