@@ -91,4 +91,16 @@ public class BranchesDaoImpl implements BranchesDAO {
         }
         return false;
     }
+
+    public String getLastBranchId(){
+        Session session = FactoryConfiguration.getInstance().getSession();
+        org.hibernate.Transaction transaction = session.beginTransaction();
+
+        Query<String> query = session.createQuery(
+                "SELECT b.code FROM Branches b ORDER BY b.code DESC", String.class
+        );
+        query.setMaxResults(1);
+        String latestBranchId = query.uniqueResult();
+        return latestBranchId;
+    }
 }

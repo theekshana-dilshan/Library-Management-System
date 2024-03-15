@@ -12,4 +12,5 @@ public interface UserBO extends SuperBO {
     boolean isExistUser(String id);
     UserDTO searchUser(String id);
     boolean deleteUser(String id);
+    public String getLastUserId();
 }

@@ -11,4 +11,5 @@ public interface BooksDAO extends CrudDAO<Books> {
     Books getBookByTitle(String bookName);
     public List<Books> getBookByGenre(String genre);
     public List<Books> getBookByAvailability();
+    public String getLastBookId();
 }

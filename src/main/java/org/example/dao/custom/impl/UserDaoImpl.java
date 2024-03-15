@@ -90,4 +90,16 @@ public class UserDaoImpl implements UserDAO {
         }
         return false;
     }
+
+    public String getLastUserId(){
+        Session session = FactoryConfiguration.getInstance().getSession();
+        org.hibernate.Transaction transaction = session.beginTransaction();
+
+        Query<String> query = session.createQuery(
+                "SELECT u.userId FROM User u ORDER BY u.userId DESC", String.class
+        );
+        query.setMaxResults(1);
+        String latestUserId = query.uniqueResult();
+        return latestUserId;
+    }
 }

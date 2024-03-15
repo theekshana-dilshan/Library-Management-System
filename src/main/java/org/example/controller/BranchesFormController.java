@@ -78,6 +78,7 @@ public class BranchesFormController {
         setCellValue();
         loadAllBranches();
         searchTable();
+        setTxtBranchCode();
     }
 
     private void setCellValue() {
@@ -217,6 +218,7 @@ public class BranchesFormController {
 
                 loadAllBranches();
                 clearFields();
+                setTxtBranchCode();
             }
         }
     }
@@ -375,6 +377,28 @@ public class BranchesFormController {
         txtLocation.clear();
         txtContact.clear();
         cmbStatus.setValue("Open or Close");
+    }
+
+    public void setTxtBranchCode(){
+        txtBranchCode.setText(splitBranchId(branchesBO.getLastBranchId()));
+    }
+
+    private static String splitBranchId(String currentUserId) {
+        if(currentUserId != null) {
+            String[] split = currentUserId.split("B0");
+
+            int id = Integer.parseInt(split[1]);
+            id++;
+            if(id < 10) {
+                return "B00" + id;
+            } else if (id < 100) {
+                return "B0" + id;
+            } else {
+                return "B" + id;
+            }
+        } else {
+            return "B001";
+        }
     }
 
 }

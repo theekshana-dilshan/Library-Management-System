@@ -49,4 +49,9 @@ public class BranchesBoImpl implements BranchesBO {
     public boolean deleteBranch(String id) {
         return branchesDAO.delete(id);
     }
+
+    @Override
+    public String getLastBranchId() {
+        return branchesDAO.getLastBranchId();
+    }
 }

@@ -83,6 +83,7 @@ public class BooksFormController {
         setAvailabilityComboBoxItems();
         loadAllBooks();
         searchTable();
+        setTxtBookId();
     }
 
     private void setCellValue() {
@@ -139,7 +140,7 @@ public class BooksFormController {
 
                 loadAllBooks();
                 clearField();
-                System.out.println("book add success");
+                setTxtBookId();
             }
         }
     }
@@ -459,6 +460,28 @@ public class BooksFormController {
         txtAuthor.clear();
         cmbGenre.setValue("Select genre");
         cmbAvailability.setValue("Select availability");
+    }
+
+    public void setTxtBookId(){
+        txtBookId.setText(splitBooksId(booksBO.getLastBookId()));
+    }
+
+    private static String splitBooksId(String currentUserId) {
+        if(currentUserId != null) {
+            String[] split = currentUserId.split("B0");
+
+            int id = Integer.parseInt(split[1]);
+            id++;
+            if(id < 10) {
+                return "B00" + id;
+            } else if (id < 100) {
+                return "B0" + id;
+            } else {
+                return "B" + id;
+            }
+        } else {
+            return "B001";
+        }
     }
 
 }

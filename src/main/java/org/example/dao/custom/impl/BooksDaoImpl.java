@@ -166,4 +166,16 @@ public class BooksDaoImpl implements BooksDAO {
 
         return resultList;
     }
+
+    public String getLastBookId(){
+        Session session = FactoryConfiguration.getInstance().getSession();
+        org.hibernate.Transaction transaction = session.beginTransaction();
+
+        Query<String> query = session.createQuery(
+                "SELECT b.id FROM Books b ORDER BY b.id DESC", String.class
+        );
+        query.setMaxResults(1);
+        String latestBookId = query.uniqueResult();
+        return latestBookId;
+    }
 }

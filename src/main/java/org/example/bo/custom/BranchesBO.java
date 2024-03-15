@@ -12,4 +12,5 @@ public interface BranchesBO extends SuperBO {
     boolean isExistBranch(String id);
     BranchesDTO searchBranch(String id);
     boolean deleteBranch(String id);
+    public String getLastBranchId();
 }

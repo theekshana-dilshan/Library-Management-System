@@ -176,7 +176,7 @@ public class TransactionDAOImpl implements TransactionDAO {
                 "SELECT t.transactionId FROM Transaction t ORDER BY t.transactionId DESC", String.class
         );
         query.setMaxResults(1);
-        String latestUserId = query.uniqueResult();
-        return latestUserId;
+        String latestTransactionId = query.uniqueResult();
+        return latestTransactionId;
     }
 }

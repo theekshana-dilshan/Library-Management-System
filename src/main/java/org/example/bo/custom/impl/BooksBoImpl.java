@@ -82,5 +82,10 @@ public class BooksBoImpl implements BooksBO {
         return bookDAO.getBookByAvailability();
     }
 
+    @Override
+    public String getLastBookId() {
+        return bookDAO.getLastBookId();
+    }
+
 
 }

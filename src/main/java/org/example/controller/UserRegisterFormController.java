@@ -41,7 +41,7 @@ public class UserRegisterFormController {
 
     @FXML
     void btnSignupOnAction(ActionEvent event) {
-        String userId = "U001";
+        String userId = splitUserId(userBO.getLastUserId());
 
         boolean b = userBO.addUser(new UserDTO(userId, txtUsername.getText(), txtEmail.getText(), txtPasswordReEnter.getText()));
         if (b){
@@ -78,6 +78,25 @@ public class UserRegisterFormController {
     public void setUI (AnchorPane pane, String location) throws IOException {
         pane.getChildren().clear();
         pane.getChildren().add(FXMLLoader.load(getClass().getResource(location)));
+    }
+
+
+    private static String splitUserId(String currentUserId) {
+        if(currentUserId != null) {
+            String[] split = currentUserId.split("U0");
+
+            int id = Integer.parseInt(split[1]);
+            id++;
+            if(id < 10) {
+                return "U00" + id;
+            } else if (id < 100) {
+                return "U0" + id;
+            } else {
+                return "u" + id;
+            }
+        } else {
+            return "U001";
+        }
     }
 
 }
