@@ -3,6 +3,7 @@ package org.example.dao.custom.impl;
 import org.example.config.FactoryConfiguration;
 import org.example.controller.UserLoginFormController;
 import org.example.dao.custom.TransactionDAO;
+import org.example.entity.Books;
 import org.example.entity.CustomEntity;
 import org.example.entity.Transaction;
 import org.hibernate.Session;
@@ -69,6 +70,17 @@ public class TransactionDAOImpl implements TransactionDAO {
 
     @Override
     public boolean delete(String id) {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        org.hibernate.Transaction transaction = session.beginTransaction();
+
+        Transaction transaction1 = session.get(Transaction.class, id);
+
+        if (transaction1!=null){
+            session.delete(transaction1);
+            transaction.commit();
+            session.close();
+            return true;
+        }
         return false;
     }
 

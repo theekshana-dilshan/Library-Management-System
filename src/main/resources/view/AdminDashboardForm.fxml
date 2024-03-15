@@ -73,6 +73,20 @@
                   <Font name="Arial Bold" size="14.0" />
                </font>
             </Label>
+            <Pane fx:id="logOutPane" layoutX="41.0" layoutY="570.0" prefHeight="171.0" prefWidth="171.0" style="-fx-background-color: #1479FF;">
+               <children>
+                  <ImageView fitHeight="89.0" fitWidth="89.0" layoutX="41.0" layoutY="22.0">
+                     <image>
+                        <Image url="@../assests/kisspng-computer-icons-magazine-share-icon-clip-art-5b3bda4b5f5f68.8338598215306491633907.png" />
+                     </image>
+                  </ImageView>
+                  <JFXButton layoutX="22.0" layoutY="127.0" onAction="#btnLogOutOnAction" prefHeight="25.0" prefWidth="127.0" style="-fx-background-color: #FFFFFF;" text="Log out">
+                     <font>
+                        <Font name="Arial Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </Pane>
          </children>
       </AnchorPane>
       <AnchorPane fx:id="subRoot" layoutX="255.0" prefHeight="786.0" prefWidth="1282.0" style="-fx-background-color: #E9EDF1;">
@@ -127,7 +141,7 @@
                         <Font name="Arial Bold" size="18.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" layoutX="223.0" layoutY="66.0" prefHeight="21.0" prefWidth="56.0" text="00" textFill="#1479ff">
+                  <Label fx:id="lblTotalReadersCount" alignment="CENTER" layoutX="223.0" layoutY="66.0" prefHeight="21.0" prefWidth="56.0" text="00" textFill="#1479ff">
                      <font>
                         <Font name="Arial Bold" size="18.0" />
                      </font>
@@ -151,7 +165,7 @@
                         <Font name="Arial Bold" size="18.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" layoutX="223.0" layoutY="68.0" prefHeight="21.0" prefWidth="56.0" text="00" textFill="#1479ff">
+                  <Label fx:id="lblTotalBooksCount" alignment="CENTER" layoutX="223.0" layoutY="68.0" prefHeight="21.0" prefWidth="56.0" text="00" textFill="#1479ff">
                      <font>
                         <Font name="Arial Bold" size="18.0" />
                      </font>
@@ -170,7 +184,7 @@
                         <Font name="Arial Bold" size="18.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" layoutX="223.0" layoutY="69.0" prefHeight="21.0" prefWidth="56.0" text="00" textFill="#1479ff">
+                  <Label fx:id="lblAvailableBookCount" alignment="CENTER" layoutX="223.0" layoutY="69.0" prefHeight="21.0" prefWidth="56.0" text="00" textFill="#1479ff">
                      <font>
                         <Font name="Arial Bold" size="18.0" />
                      </font>
@@ -189,7 +203,7 @@
                         <Font name="Arial Bold" size="18.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" layoutX="221.0" layoutY="68.0" prefHeight="21.0" prefWidth="56.0" text="00" textFill="#1479ff">
+                  <Label fx:id="lblTodayBorrowedBooksCount" alignment="CENTER" layoutX="221.0" layoutY="68.0" prefHeight="21.0" prefWidth="56.0" text="00" textFill="#1479ff">
                      <font>
                         <Font name="Arial Bold" size="18.0" />
                      </font>
@@ -205,7 +219,7 @@
                               <Font name="Arial Bold" size="12.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" layoutX="35.0" layoutY="89.0" prefHeight="21.0" prefWidth="56.0" text="00" textFill="#1479ff">
+                        <Label fx:id="lblRomanceCount" alignment="CENTER" layoutX="35.0" layoutY="89.0" prefHeight="21.0" prefWidth="56.0" text="00" textFill="#1479ff">
                            <font>
                               <Font name="Arial Bold" size="14.0" />
                            </font>
@@ -224,7 +238,7 @@
                               <Font name="Arial Bold" size="12.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" layoutX="35.0" layoutY="89.0" prefHeight="21.0" prefWidth="56.0" text="00" textFill="#1479ff">
+                        <Label fx:id="lblTrillersAndHorrorsCount" alignment="CENTER" layoutX="35.0" layoutY="89.0" prefHeight="21.0" prefWidth="56.0" text="00" textFill="#1479ff">
                            <font>
                               <Font name="Arial Bold" size="14.0" />
                            </font>
@@ -243,7 +257,7 @@
                               <Font name="Arial Bold" size="12.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" layoutX="35.0" layoutY="89.0" prefHeight="21.0" prefWidth="56.0" text="00" textFill="#1479ff">
+                        <Label fx:id="lblFantacyAndScienceCount" alignment="CENTER" layoutX="35.0" layoutY="89.0" prefHeight="21.0" prefWidth="56.0" text="00" textFill="#1479ff">
                            <font>
                               <Font name="Arial Bold" size="14.0" />
                            </font>
@@ -257,7 +271,7 @@
                               <Font name="Arial Bold" size="12.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" layoutX="35.0" layoutY="89.0" prefHeight="21.0" prefWidth="56.0" text="00" textFill="#1479ff">
+                        <Label fx:id="lblMysteryCount" alignment="CENTER" layoutX="35.0" layoutY="89.0" prefHeight="21.0" prefWidth="56.0" text="00" textFill="#1479ff">
                            <font>
                               <Font name="Arial Bold" size="14.0" />
                            </font>
@@ -271,7 +285,7 @@
                               <Font name="Arial Bold" size="12.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" layoutX="35.0" layoutY="89.0" prefHeight="21.0" prefWidth="56.0" text="00" textFill="#1479ff">
+                        <Label fx:id="lblYoungAdultCount" alignment="CENTER" layoutX="35.0" layoutY="89.0" prefHeight="21.0" prefWidth="56.0" text="00" textFill="#1479ff">
                            <font>
                               <Font name="Arial Bold" size="14.0" />
                            </font>
@@ -295,7 +309,7 @@
                               <Font name="Arial Bold" size="12.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" layoutX="35.0" layoutY="89.0" prefHeight="21.0" prefWidth="56.0" text="00" textFill="#1479ff">
+                        <Label fx:id="lblBiographyAndAutobiographyAndMemoirCount" alignment="CENTER" layoutX="35.0" layoutY="89.0" prefHeight="21.0" prefWidth="56.0" text="00" textFill="#1479ff">
                            <font>
                               <Font name="Arial Bold" size="14.0" />
                            </font>
@@ -319,7 +333,7 @@
                               <Font name="Arial Bold" size="12.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" layoutX="35.0" layoutY="89.0" prefHeight="21.0" prefWidth="56.0" text="00" textFill="#1479ff">
+                        <Label fx:id="lblInspirationalAndSelfHelpAndReligiousCount" alignment="CENTER" layoutX="35.0" layoutY="89.0" prefHeight="21.0" prefWidth="56.0" text="00" textFill="#1479ff">
                            <font>
                               <Font name="Arial Bold" size="14.0" />
                            </font>
@@ -333,7 +347,7 @@
                               <Font name="Arial Bold" size="12.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" layoutX="35.0" layoutY="89.0" prefHeight="21.0" prefWidth="56.0" text="00" textFill="#1479ff">
+                        <Label fx:id="lblChildrensCount" alignment="CENTER" layoutX="35.0" layoutY="89.0" prefHeight="21.0" prefWidth="56.0" text="00" textFill="#1479ff">
                            <font>
                               <Font name="Arial Bold" size="14.0" />
                            </font>
@@ -347,5 +361,19 @@
                </font>
             </Label>
          </children></AnchorPane>
+      <Pane fx:id="UsersIconPane111" layoutX="30.0" layoutY="378.0" prefHeight="35.0" prefWidth="35.0" style="-fx-background-radius: 10px; -fx-background-color: #E5E9ED;">
+         <children>
+            <ImageView fx:id="imgHistory" fitHeight="25.0" fitWidth="25.0" layoutX="5.0" layoutY="5.0">
+               <image>
+                  <Image url="@../assests/icons8-history-30%20(1).png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Label fx:id="lblHistory" layoutX="91.0" layoutY="378.0" onMouseClicked="#lblHistoryOnAction" prefHeight="35.0" prefWidth="155.0" text="History">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

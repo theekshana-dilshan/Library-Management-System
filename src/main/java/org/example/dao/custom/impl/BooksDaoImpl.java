@@ -134,4 +134,20 @@ public class BooksDaoImpl implements BooksDAO {
 
         return book;
     }
+
+    @Override
+    public List<Books> getBookByGenre(String genre) {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        Query<Books> query = session.createQuery("FROM Books WHERE genre= : genre",Books.class);
+        query.setParameter("genre", genre);
+
+        List<Books> resultList = query.getResultList();
+
+        transaction.commit();
+        session.close();
+
+        return resultList;
+    }
 }

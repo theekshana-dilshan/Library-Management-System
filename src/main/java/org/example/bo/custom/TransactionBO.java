@@ -4,6 +4,7 @@ import org.example.bo.SuperBO;
 import org.example.dto.TransactionDto;
 import org.example.dto.UserTransactionDto;
 import org.example.entity.CustomEntity;
+import org.example.entity.Transaction;
 
 import java.util.List;
 
@@ -17,5 +18,7 @@ public interface TransactionBO extends SuperBO {
     public List<UserTransactionDto> getUserAllTransaction();
 
     public boolean updateStatus(String id);
+
+    public boolean delete(String id);
 
 }

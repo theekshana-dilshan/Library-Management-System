@@ -2,17 +2,19 @@ package org.example.controller;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 import org.example.bo.BOFactory;
 import org.example.bo.custom.BooksBO;
 import org.example.dto.BooksDTO;
@@ -23,6 +25,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class UserDashboardFormController {
 
@@ -46,6 +49,9 @@ public class UserDashboardFormController {
 
     @FXML
     private ImageView imgHistory;
+
+    @FXML
+    private Pane logOutPane;
 
     @FXML
     private Pane booksPane;
@@ -96,6 +102,7 @@ public class UserDashboardFormController {
         setDate();
         setCellValue();
         loadAllBooks();
+        customLogOutPane();
     }
 
     private void setCellValue() {
@@ -234,8 +241,28 @@ public class UserDashboardFormController {
         helloPane.setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, #a9cdfa, 10, 0, 0, 6); -fx-background-radius: 10px;");
     }
 
+    void customLogOutPane(){
+        logOutPane.setStyle("-fx-background-color: linear-gradient(to bottom, #207cca 0%,#9db2c4 100%); -fx-background-radius: 10px;");
+    }
+
     private void setDate() {
         lblDate.setText(String.valueOf(LocalDate.now()));
     }
 
+    public void btnLogOutOnAction(ActionEvent actionEvent) throws IOException {
+        ButtonType yes = new ButtonType("Yes", ButtonBar.ButtonData.OK_DONE);
+        ButtonType no = new ButtonType("No", ButtonBar.ButtonData.CANCEL_CLOSE);
+
+        Optional<ButtonType> type = new Alert(Alert.AlertType.INFORMATION, "Are you sure to Logout?", yes, no).showAndWait();
+
+        if (type.orElse(no) == yes) {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/UserLoginForm.fxml"));
+            Parent parent = fxmlLoader.load();
+            Scene scene = new Scene(parent);
+            Stage stage = (Stage) root.getScene().getWindow();
+            stage.setScene(scene);
+            stage.centerOnScreen();
+            stage.show();
+        }
+    }
 }

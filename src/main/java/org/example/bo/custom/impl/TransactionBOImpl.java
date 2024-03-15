@@ -14,6 +14,8 @@ import java.util.List;
 public class TransactionBOImpl implements TransactionBO {
 
     TransactionDAO transactionDAO= (TransactionDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.TRANSACTION);
+
+
     @Override
     public boolean saveTransaction(TransactionDto dto) {
         return transactionDAO.add(new Transaction(dto.getTransactionId(),dto.getBorrowingDate(),dto.getReturnDate()
@@ -62,5 +64,10 @@ public class TransactionBOImpl implements TransactionBO {
     @Override
     public boolean updateStatus(String id) {
         return transactionDAO.updateStatus(id);
+    }
+
+    @Override
+    public boolean delete(String id) {
+        return transactionDAO.delete(id);
     }
 }
