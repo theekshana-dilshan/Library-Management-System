@@ -20,10 +20,12 @@ import javafx.util.Duration;
 import org.controlsfx.control.Notifications;
 import org.example.bo.BOFactory;
 import org.example.bo.custom.BooksBO;
+import org.example.bo.custom.TransactionBO;
 import org.example.bo.custom.UserBO;
 import org.example.dto.BooksDTO;
 import org.example.dto.UserDTO;
 import org.example.entity.Books;
+import org.example.entity.Transaction;
 import org.example.entity.User;
 import org.example.tm.AdminHistoryTm;
 import org.jetbrains.annotations.NotNull;
@@ -140,6 +142,8 @@ public class AdminDashboardFormController {
     private BooksBO booksBO= (BooksBO) BOFactory.getBOFactory().getBO(BOFactory.BOTypes.BOOKS);
 
     private UserBO userBO= (UserBO) BOFactory.getBOFactory().getBO(BOFactory.BOTypes.USER);
+
+    private TransactionBO transactionBO= (TransactionBO) BOFactory.getBOFactory().getBO(BOFactory.BOTypes.TRANSACTION);
 
     public void initialize(){
         imgDashBoardFocused();
@@ -325,6 +329,8 @@ public class AdminDashboardFormController {
         setLblBiographyAndAutobiographyAndMemoirCount();
         setLblTotalReadersCount();
         setLblTotalBooksCount();
+        setLblAvailableBookCount();
+        setLblTodayBorrowedBooksCount();
     }
 
     public void setLblMysteryCount(){
@@ -458,6 +464,26 @@ public class AdminDashboardFormController {
             lblTotalBooksCount.setText("0" + String.valueOf(size));
         }else {
             lblTotalBooksCount.setText(String.valueOf(size));
+        }
+    }
+
+    public void setLblAvailableBookCount(){
+        List<Books> books = booksBO.getBookByAvailability();
+        int size = books.size();
+        if (size < 10) {
+            lblAvailableBookCount.setText("0" + String.valueOf(size));
+        }else {
+            lblAvailableBookCount.setText(String.valueOf(size));
+        }
+    }
+
+    public void setLblTodayBorrowedBooksCount(){
+        List<Transaction> transactions = transactionBO.getAllToday();
+        int size = transactions.size();
+        if (size < 10) {
+            lblTodayBorrowedBooksCount.setText("0" + String.valueOf(size));
+        }else {
+            lblTodayBorrowedBooksCount.setText(String.valueOf(size));
         }
     }
 }

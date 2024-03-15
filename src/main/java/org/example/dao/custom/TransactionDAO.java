@@ -7,9 +7,9 @@ import org.example.entity.Transaction;
 import java.util.List;
 
 public interface TransactionDAO extends CrudDAO<Transaction> {
-    public List<CustomEntity> getUserTransaction();
-
-    public List<CustomEntity> getUserAllTransaction();
-
-    public boolean updateStatus(String id);
+    List<CustomEntity> getUserTransaction();
+    List<CustomEntity> getUserAllTransaction();
+    boolean updateStatus(String id);
+    List<Transaction> getAllToday();
+    public String getLastTransactionId();
 }

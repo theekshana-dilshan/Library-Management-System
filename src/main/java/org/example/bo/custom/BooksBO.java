@@ -17,4 +17,5 @@ public interface BooksBO extends SuperBO {
     boolean returnBook(String id);
     BooksDTO getBookByTitle(String bookName);
     List<Books> getBookByGenre(String genre);
+    public List<Books> getBookByAvailability();
 }

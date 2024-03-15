@@ -150,4 +150,20 @@ public class BooksDaoImpl implements BooksDAO {
 
         return resultList;
     }
+
+    @Override
+    public List<Books> getBookByAvailability() {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        Query<Books> query = session.createQuery("FROM Books WHERE availability= : availability",Books.class);
+        query.setParameter("availability", true);
+
+        List<Books> resultList = query.getResultList();
+
+        transaction.commit();
+        session.close();
+
+        return resultList;
+    }
 }

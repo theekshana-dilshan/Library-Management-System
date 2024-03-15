@@ -70,4 +70,14 @@ public class TransactionBOImpl implements TransactionBO {
     public boolean delete(String id) {
         return transactionDAO.delete(id);
     }
+
+    @Override
+    public List<Transaction> getAllToday() {
+        return transactionDAO.getAllToday();
+    }
+
+    @Override
+    public String getLastTransactionId() {
+        return transactionDAO.getLastTransactionId();
+    }
 }

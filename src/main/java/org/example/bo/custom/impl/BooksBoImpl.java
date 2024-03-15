@@ -77,5 +77,10 @@ public class BooksBoImpl implements BooksBO {
         return bookDAO.getBookByGenre(genre);
     }
 
+    @Override
+    public List<Books> getBookByAvailability() {
+        return bookDAO.getBookByAvailability();
+    }
+
 
 }

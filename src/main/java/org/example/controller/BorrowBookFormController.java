@@ -206,7 +206,8 @@ public class BorrowBookFormController {
     }
 
     public void btnComfirmOnAction(ActionEvent actionEvent) {
-        String transactionId = "T004";
+        String transactionId = transactionBO.getLastTransactionId();
+        String newTransactionId = splitTransactionId(transactionId);
         String status = "To return";
 
         long millis=System.currentTimeMillis();
@@ -224,7 +225,7 @@ public class BorrowBookFormController {
         Books books = new Books(booksDTO.getId(), booksDTO.getTitle(), booksDTO.getAuthor(), booksDTO.getGenre(), booksDTO.isAvailability());
         User user = new User(userDTO.getUserId(), userDTO.getUserName(), userDTO.getEmail(), userDTO.getPassword());
 
-        TransactionDto transactionDto = new TransactionDto(transactionId,borrowingDate,returnDate, user, books, status);
+        TransactionDto transactionDto = new TransactionDto(newTransactionId, borrowingDate, returnDate, user, books, status);
 
         boolean isSaved = transactionBO.saveTransaction(transactionDto);
         if (isSaved){
@@ -292,5 +293,23 @@ public class BorrowBookFormController {
 
     private void setDate() {
         lblDate.setText(String.valueOf(LocalDate.now()));
+    }
+
+    private static String splitTransactionId(String currentUserId) {
+        if(currentUserId != null) {
+            String[] split = currentUserId.split("T0");
+
+            int id = Integer.parseInt(split[1]);
+            id++;
+            if(id < 10) {
+                return "T00" + id;
+            } else if (id < 100) {
+                return "T0" + id;
+            } else {
+                return "T" + id;
+            }
+        } else {
+            return "T001";
+        }
     }
 }

@@ -3,12 +3,12 @@ package org.example.dao.custom.impl;
 import org.example.config.FactoryConfiguration;
 import org.example.controller.UserLoginFormController;
 import org.example.dao.custom.TransactionDAO;
-import org.example.entity.Books;
 import org.example.entity.CustomEntity;
 import org.example.entity.Transaction;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -32,6 +32,23 @@ public class TransactionDAOImpl implements TransactionDAO {
         org.hibernate.Transaction transaction=session.beginTransaction();
 
         Query<Transaction> query = session.createQuery("FROM Transaction ", Transaction.class);
+        List<Transaction> resultList = query.getResultList();
+
+        transaction.commit();
+        session.close();
+        return resultList;
+    }
+
+    @Override
+    public List<Transaction> getAllToday() {
+        Session session= FactoryConfiguration.getInstance().getSession();
+        org.hibernate.Transaction transaction=session.beginTransaction();
+
+        LocalDate date = LocalDate.now();
+
+        Query<Transaction> query = session.createQuery("FROM Transaction WHERE borrowingDate= : date", Transaction.class);
+        query.setParameter("date", date);
+
         List<Transaction> resultList = query.getResultList();
 
         transaction.commit();
@@ -149,5 +166,17 @@ public class TransactionDAOImpl implements TransactionDAO {
         transaction.commit();
         session.close();
         return customEntities;
+    }
+
+    public String getLastTransactionId(){
+        Session session = FactoryConfiguration.getInstance().getSession();
+        org.hibernate.Transaction transaction = session.beginTransaction();
+
+        Query<String> query = session.createQuery(
+                "SELECT t.transactionId FROM Transaction t ORDER BY t.transactionId DESC", String.class
+        );
+        query.setMaxResults(1);
+        String latestUserId = query.uniqueResult();
+        return latestUserId;
     }
 }
