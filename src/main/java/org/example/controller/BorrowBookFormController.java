@@ -22,15 +22,22 @@ import org.controlsfx.control.textfield.TextFields;
 import org.example.bo.BOFactory;
 import org.example.bo.custom.BooksBO;
 import org.example.bo.custom.BranchesBO;
+import org.example.bo.custom.TransactionBO;
+import org.example.bo.custom.UserBO;
 import org.example.dto.BooksDTO;
 import org.example.dto.BranchesDTO;
+import org.example.dto.TransactionDto;
+import org.example.dto.UserDTO;
+import org.example.entity.Books;
 import org.example.entity.Branches;
+import org.example.entity.User;
 import org.example.tm.BooksTm;
 import org.example.tm.BorrowBookTm;
 import org.example.tm.BranchesTm;
 import org.example.tm.OurBooksTm;
 
 import java.awt.event.MouseEvent;
+import java.sql.Date;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -100,9 +107,15 @@ public class BorrowBookFormController {
 
     private BooksBO booksBO= (BooksBO) BOFactory.getBOFactory().getBO(BOFactory.BOTypes.BOOKS);
 
+    private UserBO userBO= (UserBO) BOFactory.getBOFactory().getBO(BOFactory.BOTypes.USER);
+
     private ObservableList<BorrowBookTm> obList;
 
     private BranchesBO branchesBO= (BranchesBO) BOFactory.getBOFactory().getBO(BOFactory.BOTypes.BRANCHES);
+
+    private TransactionBO transactionBO= (TransactionBO) BOFactory.getBOFactory().getBO(BOFactory.BOTypes.TRANSACTION);
+
+    private String userId;
 
     public void initialize(){
         setShadowsToPanes();
@@ -111,6 +124,8 @@ public class BorrowBookFormController {
         loadAllBooks();
         setCmbBranchSelect();
         searchTable();
+
+        userId = UserLoginFormController.userId;
     }
 
     private void setCellValue() {
@@ -191,6 +206,44 @@ public class BorrowBookFormController {
     }
 
     public void btnComfirmOnAction(ActionEvent actionEvent) {
+        String transactionId = "T001";
+        String status = "To return";
+
+        long millis=System.currentTimeMillis();
+        java.sql.Date borrowingDate=new java.sql.Date(millis);
+
+        LocalDate currentDate = LocalDate.now();
+        LocalDate futureDate = currentDate.plusDays(14);
+        java.sql.Date returnDate = java.sql.Date.valueOf(futureDate);
+
+        String bookName = lblBookNameOnBorrowBook.getText();
+
+        BooksDTO booksDTO = booksBO.getBookByTitle(bookName);
+        UserDTO userDTO = userBO.searchUser(userId);
+
+        Books books = new Books(booksDTO.getId(), booksDTO.getTitle(), booksDTO.getAuthor(), booksDTO.getGenre(), booksDTO.isAvailability());
+        User user = new User(userDTO.getUserId(), userDTO.getUserName(), userDTO.getEmail(), userDTO.getPassword());
+
+        TransactionDto transactionDto = new TransactionDto(transactionId,borrowingDate,returnDate, user, books, status);
+
+        boolean isSaved = transactionBO.saveTransaction(transactionDto);
+        if (isSaved){
+            boolean isBorrowed = booksBO.borrowBook(booksDTO.getId());
+            if (isBorrowed){
+                Image image=new Image("/assests/icons/iconsOk.png");
+                try {
+                    Notifications notifications=Notifications.create();
+                    notifications.graphic(new ImageView(image));
+                    notifications.text("Book borrowed");
+                    notifications.title("Success ");
+                    notifications.hideAfter(Duration.seconds(5));
+                    notifications.position(Pos.TOP_RIGHT);
+                    notifications.show();
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+        }
 
     }
 

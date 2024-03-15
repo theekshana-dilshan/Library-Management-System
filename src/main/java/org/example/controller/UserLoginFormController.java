@@ -24,6 +24,12 @@ public class UserLoginFormController {
     @FXML
     private JFXTextField txtUserName;
 
+    public static String userId;
+
+    public void initialize(){
+        userId = "U001";
+    }
+
     @FXML
     void btnLoginOnAction(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/UserDashboardForm.fxml"));

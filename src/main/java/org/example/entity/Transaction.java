@@ -29,4 +29,7 @@ public class Transaction {
     @ManyToOne
     @JoinColumn(name="id" , nullable = false)
     private Books books;
+
+    @Column(nullable = false)
+    private String status;
 }

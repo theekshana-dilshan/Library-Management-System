@@ -18,4 +18,5 @@ public class TransactionDto {
     private Date returnDate;
     private User user;
     private Books book;
+    private String status;
 }

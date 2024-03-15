@@ -61,6 +61,11 @@ public class BooksBoImpl implements BooksBO {
     }
 
     @Override
+    public boolean returnBook(String id) {
+        return bookDAO.returnBook(id);
+    }
+
+    @Override
     public BooksDTO getBookByTitle(String bookName) {
         Books search = bookDAO.getBookByTitle(bookName);
         BooksDTO booksDTO = new BooksDTO(search.getId(),search.getTitle(),search.getAuthor(),search.getGenre(),search.isAvailability());

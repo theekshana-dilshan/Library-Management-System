@@ -17,7 +17,7 @@ public class TransactionBOImpl implements TransactionBO {
     @Override
     public boolean saveTransaction(TransactionDto dto) {
         return transactionDAO.add(new Transaction(dto.getTransactionId(),dto.getBorrowingDate(),dto.getReturnDate()
-        ,dto.getUser(),dto.getBook()));
+        ,dto.getUser(),dto.getBook(), dto.getStatus()));
     }
 
     @Override
@@ -28,7 +28,7 @@ public class TransactionBOImpl implements TransactionBO {
 
         for (Transaction transaction : all) {
             allTransaction.add(new TransactionDto(transaction.getTransactionId(),transaction.getBorrowingDate(),transaction.getReturnDate(),
-                    transaction.getUser(),transaction.getBooks()));
+                    transaction.getUser(),transaction.getBooks(),transaction.getStatus()));
         }
         return allTransaction;
     }
@@ -40,8 +40,8 @@ public class TransactionBOImpl implements TransactionBO {
         List<UserTransactionDto> allTransaction = new ArrayList<>();
 
         for ( CustomEntity transaction : all) {
-            allTransaction.add(new UserTransactionDto(transaction.getBookId(),transaction.getTitle(),transaction.getType(),
-                    transaction.getBorrowingDate(),transaction.getReturnDate(),transaction.isStatus()));
+            allTransaction.add(new UserTransactionDto(transaction.getBookId(),transaction.getTitle(),transaction.getAuthor(), transaction.getGenre(),
+                    transaction.getBorrowingDate(),transaction.getReturnDate(),transaction.getStatus()));
         }
         return allTransaction;
     }

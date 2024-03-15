@@ -13,5 +13,6 @@ public interface BooksBO extends SuperBO {
     BooksDTO searchBook(String id);
     boolean deleteBook(String id);
     boolean borrowBook(String id);
+    boolean returnBook(String id);
     BooksDTO getBookByTitle(String bookName);
 }

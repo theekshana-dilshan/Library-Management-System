@@ -12,8 +12,9 @@ import java.util.Date;
 public class CustomEntity {
     private String bookId;
     private String title;
-    private String type;
+    private String author;
+    private String genre;
     private Date borrowingDate;
     private Date returnDate;
-    private boolean status;
+    private String status;
 }

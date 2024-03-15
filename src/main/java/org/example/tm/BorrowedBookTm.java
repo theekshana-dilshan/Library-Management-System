@@ -1,8 +1,10 @@
 package org.example.tm;
 
+import javafx.scene.control.Button;
 import lombok.*;
 
 import java.awt.*;
+import java.sql.Date;
 
 @Getter
 @Setter
@@ -14,7 +16,7 @@ public class BorrowedBookTm {
     private String title;
     private String author;
     private String genre;
-    private String borrowDate;
-    private String returnDate;
+    private Date borrowDate;
+    private Date returnDate;
     private Button returnBook;
 }
