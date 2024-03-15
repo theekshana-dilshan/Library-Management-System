@@ -12,6 +12,7 @@ import java.sql.Date;
 @AllArgsConstructor
 @ToString
 public class BorrowedBookTm {
+    private String transactionId;
     private String bookId;
     private String title;
     private String author;

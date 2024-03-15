@@ -45,6 +45,9 @@ public class UserDashboardFormController {
     private ImageView imgDashBoard;
 
     @FXML
+    private ImageView imgHistory;
+
+    @FXML
     private Pane booksPane;
 
     @FXML
@@ -61,6 +64,9 @@ public class UserDashboardFormController {
 
     @FXML
     private Label lblDate;
+
+    @FXML
+    private Label lblHistory;
 
     @FXML
     private AnchorPane root;
@@ -119,6 +125,7 @@ public class UserDashboardFormController {
         imgDashBoardDefault();
         imgBooksFocused();
         imgBarrowedBooksDefault();
+        imgHistoryDefault();
     }
 
     @FXML
@@ -128,6 +135,7 @@ public class UserDashboardFormController {
         imgDashBoardDefault();
         imgBooksFocused();
         imgBarrowedBooksDefault();
+        imgHistoryDefault();
     }
 
     @FXML
@@ -137,6 +145,7 @@ public class UserDashboardFormController {
         imgDashBoardDefault();
         imgBooksDefault();
         imgBarrowedBooksFocused();
+        imgHistoryDefault();
     }
 
     @FXML
@@ -144,6 +153,17 @@ public class UserDashboardFormController {
         setUI(root,"/view/UserDashboardForm.fxml");
 
         imgDashBoardFocused();
+        imgBooksDefault();
+        imgBarrowedBooksDefault();
+        imgHistoryDefault();
+    }
+
+    @FXML
+    void lblHistoryOnAction(MouseEvent event) throws IOException {
+        setUI(subRoot,"/view/userTrasactionForm.fxml");
+
+        imgHistoryFocused();
+        imgDashBoardDefault();
         imgBooksDefault();
         imgBarrowedBooksDefault();
     }
@@ -195,6 +215,16 @@ public class UserDashboardFormController {
     void imgBarrowedBooksFocused(){
         lblBooks1.setStyle("-fx-text-fill: #1479ff;");
         setImageToImageView(imgBarrowedBooks, "C:\\Users\\ASUS\\Documents\\GitHub\\Library-Management-System\\src\\main\\resources\\assests\\icons8-books-24 (1).png");
+    }
+
+    void imgHistoryDefault(){
+        lblHistory.setStyle("-fx-text-fill: #000000;");
+        setImageToImageView(imgHistory, "C:\\Users\\ASUS\\Documents\\GitHub\\Library-Management-System\\src\\main\\resources\\assests\\icons8-history-30 (1).png");
+    }
+
+    void imgHistoryFocused(){
+        lblHistory.setStyle("-fx-text-fill: #1479ff;");
+        setImageToImageView(imgHistory, "C:\\Users\\ASUS\\Documents\\GitHub\\Library-Management-System\\src\\main\\resources\\assests\\icons8-history-30.png");
     }
 
     void setShadowsToPanes(){

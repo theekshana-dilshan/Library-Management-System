@@ -77,25 +77,60 @@ public class TransactionDAOImpl implements TransactionDAO {
         org.hibernate.Transaction transaction = session.beginTransaction();
 
         Query<Object[]> query = session.createQuery(
-                "SELECT t.books.id, t.books.title,t.books.author, t.books.genre, t.borrowingDate, t.returnDate, t.status " +
+                "SELECT t.transactionId, t.books.id, t.books.title,t.books.author, t.books.genre, t.borrowingDate, t.returnDate, t.status " +
                         "FROM Transaction t " +
-                        "WHERE t.user.userId = :userId",
+                        "WHERE t.user.userId = :userId AND t.status = :status",
                 Object[].class
-        ).setParameter("userId", UserLoginFormController.userId);
+        ).setParameter("userId", UserLoginFormController.userId)
+         .setParameter("status", "To return");;
 
         List<Object[]> resultList = query.getResultList();
         List<CustomEntity> customEntities = new ArrayList<>();
 
         for (Object[] result : resultList) {
-            String bookId = (String) result[0];
-            String title = (String) result[1];
-            String author= (String) result[2];
-            String genre = (String) result[3];
-            Date borrowingDate = (Date) result[4];
-            Date returnDate = (Date) result[5];
-            String status = (String) result[6];
+            String transactionId = (String) result[0];
+            String bookId = (String) result[1];
+            String title = (String) result[2];
+            String author= (String) result[3];
+            String genre = (String) result[4];
+            Date borrowingDate = (Date) result[5];
+            Date returnDate = (Date) result[6];
+            String status = (String) result[7];
 
-            CustomEntity customEntity = new CustomEntity(bookId, title, author,genre, borrowingDate, returnDate, status);
+            CustomEntity customEntity = new CustomEntity(transactionId, bookId, title, author,genre, borrowingDate, returnDate, status);
+            customEntities.add(customEntity);
+        }
+
+        transaction.commit();
+        session.close();
+        return customEntities;
+    }
+
+    public List<CustomEntity> getUserAllTransaction() {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        org.hibernate.Transaction transaction = session.beginTransaction();
+
+        Query<Object[]> query = session.createQuery(
+                        "SELECT t.transactionId, t.books.id, t.books.title,t.books.author, t.books.genre, t.borrowingDate, t.returnDate, t.status " +
+                                "FROM Transaction t " +
+                                "WHERE t.user.userId = :userId",
+                        Object[].class
+                ).setParameter("userId", UserLoginFormController.userId);
+
+        List<Object[]> resultList = query.getResultList();
+        List<CustomEntity> customEntities = new ArrayList<>();
+
+        for (Object[] result : resultList) {
+            String transactionId = (String) result[0];
+            String bookId = (String) result[1];
+            String title = (String) result[2];
+            String author= (String) result[3];
+            String genre = (String) result[4];
+            Date borrowingDate = (Date) result[5];
+            Date returnDate = (Date) result[6];
+            String status = (String) result[7];
+
+            CustomEntity customEntity = new CustomEntity(transactionId, bookId, title, author,genre, borrowingDate, returnDate, status);
             customEntities.add(customEntity);
         }
 

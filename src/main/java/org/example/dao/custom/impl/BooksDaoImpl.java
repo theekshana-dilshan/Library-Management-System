@@ -111,7 +111,7 @@ public class BooksDaoImpl implements BooksDAO {
         Transaction transaction=session.beginTransaction();
 
         Query query = session.createQuery("UPDATE Books SET availability = : availability WHERE id = :bookId");
-        query.setParameter("availability",false);
+        query.setParameter("availability",true);
         query.setParameter("bookId", id);
         int rowsUpdated = query.executeUpdate();
         transaction.commit();

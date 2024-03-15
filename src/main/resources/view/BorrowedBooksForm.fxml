@@ -62,13 +62,14 @@
       </AnchorPane>
       <TableView fx:id="tblBorrowedBooks" layoutX="41.0" layoutY="89.0" prefHeight="517.0" prefWidth="1210.0" style="-fx-text-fill: #193b68;" stylesheets="@../Style/Style.css">
          <columns>
-            <TableColumn fx:id="colBookId" minWidth="0.0" prefWidth="83.19997787475586" text="Book ID" />
-            <TableColumn fx:id="colTitle" prefWidth="336.00006103515625" text="Title" />
-            <TableColumn fx:id="colAuthor" prefWidth="198.4000244140625" text="Author" />
-            <TableColumn fx:id="colGenre" prefWidth="168.79998779296875" text="Genre" />
-            <TableColumn fx:id="colBorrowDate" prefWidth="146.39996337890625" text="Borrow date" />
-            <TableColumn fx:id="colReturnDate" prefWidth="138.400146484375" text="Return date" />
-            <TableColumn fx:id="colReturn" prefWidth="136.800048828125" text="return" />
+            <TableColumn fx:id="colTransactionId" minWidth="0.0" prefWidth="88.79998397827148" text="Transaction ID" />
+            <TableColumn fx:id="colBookId" minWidth="0.0" prefWidth="96.00003051757812" text="Book ID" />
+            <TableColumn fx:id="colTitle" prefWidth="275.19996643066406" text="Title" />
+            <TableColumn fx:id="colAuthor" prefWidth="168.800048828125" text="Author" />
+            <TableColumn fx:id="colGenre" prefWidth="153.60003662109375" text="Genre" />
+            <TableColumn fx:id="colBorrowDate" prefWidth="149.60003662109375" text="Borrow date" />
+            <TableColumn fx:id="colReturnDate" prefWidth="144.80010986328125" text="Return date" />
+            <TableColumn fx:id="colReturn" prefWidth="121.5999755859375" text="Return" />
          </columns>
       </TableView>
       <Label fx:id="lblDate" alignment="CENTER_RIGHT" layoutX="1026.0" layoutY="26.0" prefHeight="18.0" prefWidth="208.0" text="20. february. 2024" textFill="#193b68">

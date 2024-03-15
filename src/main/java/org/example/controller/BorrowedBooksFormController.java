@@ -53,6 +53,9 @@ public class BorrowedBooksFormController {
     private TableColumn<?, ?> colTitle;
 
     @FXML
+    private TableColumn<?, ?> colTransactionId;
+
+    @FXML
     private Label lblReadingCount;
 
     @FXML
@@ -83,6 +86,7 @@ public class BorrowedBooksFormController {
     }
 
     private void setCellValue() {
+        colTransactionId.setCellValueFactory(new PropertyValueFactory<>("transactionId"));
         colBookId.setCellValueFactory(new PropertyValueFactory<>("bookId"));
         colTitle.setCellValueFactory(new PropertyValueFactory<>("title"));
         colAuthor.setCellValueFactory(new PropertyValueFactory<>("author"));
@@ -103,6 +107,7 @@ public class BorrowedBooksFormController {
             Button buttonReturn=createReturnButton();
 
             obList.add(new BorrowedBookTm(
+                    dto.getTransactionId(),
                     dto.getBookId(),
                     dto.getTitle(),
                     dto.getAuthor(),
@@ -138,20 +143,23 @@ public class BorrowedBooksFormController {
 
                 if (borrowedBookTm != null) {
                     String bookId = borrowedBookTm.getBookId();
+                    String transactionId = borrowedBookTm.getTransactionId();
                     boolean b = booksBO.returnBook(bookId);
                     if (b) {
-
-                        Image image=new Image("/assests/icons/iconsOk.png");
-                        Notifications notifications=Notifications.create();
-                        notifications.graphic(new ImageView(image));
-                        notifications.text("Book return Successfully");
-                        notifications.title("Successfully");
-                        notifications.hideAfter(Duration.seconds(5));
-                        notifications.position(Pos.TOP_RIGHT);
-                        notifications.show();
-                        obList.remove(focusedIndex);
-                        /*getAllTransaction();*/
-                        /*searchTable();*/
+                        boolean b1 = transactionBO.updateStatus(transactionId);
+                        if (b1) {
+                            Image image = new Image("/assests/icons/iconsOk.png");
+                            Notifications notifications = Notifications.create();
+                            notifications.graphic(new ImageView(image));
+                            notifications.text("Book return Successfully");
+                            notifications.title("Successfully");
+                            notifications.hideAfter(Duration.seconds(5));
+                            notifications.position(Pos.TOP_RIGHT);
+                            notifications.show();
+                            obList.remove(focusedIndex);
+                            getAllTransaction();
+                            /*searchTable();*/
+                        }
                     }
                 }
             }

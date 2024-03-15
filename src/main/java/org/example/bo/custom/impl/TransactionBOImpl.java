@@ -40,9 +40,27 @@ public class TransactionBOImpl implements TransactionBO {
         List<UserTransactionDto> allTransaction = new ArrayList<>();
 
         for ( CustomEntity transaction : all) {
-            allTransaction.add(new UserTransactionDto(transaction.getBookId(),transaction.getTitle(),transaction.getAuthor(), transaction.getGenre(),
+            allTransaction.add(new UserTransactionDto(transaction.getTransactionId(), transaction.getBookId(),transaction.getTitle(),transaction.getAuthor(), transaction.getGenre(),
                     transaction.getBorrowingDate(),transaction.getReturnDate(),transaction.getStatus()));
         }
         return allTransaction;
+    }
+
+    @Override
+    public List<UserTransactionDto> getUserAllTransaction() {
+        List<CustomEntity> all = transactionDAO.getUserAllTransaction();
+
+        List<UserTransactionDto> allTransaction = new ArrayList<>();
+
+        for ( CustomEntity transaction : all) {
+            allTransaction.add(new UserTransactionDto(transaction.getTransactionId(), transaction.getBookId(),transaction.getTitle(),transaction.getAuthor(), transaction.getGenre(),
+                    transaction.getBorrowingDate(),transaction.getReturnDate(),transaction.getStatus()));
+        }
+        return allTransaction;
+    }
+
+    @Override
+    public boolean updateStatus(String id) {
+        return transactionDAO.updateStatus(id);
     }
 }

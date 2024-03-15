@@ -12,6 +12,7 @@ import java.util.Date;
 
 
 public class UserTransactionDto {
+    private String transactionId;
     private String bookId;
     private String title;
     private String author;

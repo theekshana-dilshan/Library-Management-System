@@ -1,21 +1,21 @@
-package org.example.entity;
+package org.example.tm;
 
+import javafx.scene.control.Button;
 import lombok.*;
 
-import java.util.Date;
+import java.sql.Date;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class CustomEntity {
+public class UserHistoryTm {
     private String transactionId;
-    private String bookId;
     private String title;
     private String author;
     private String genre;
-    private Date borrowingDate;
+    private Date borrowDate;
     private Date returnDate;
     private String status;
 }
