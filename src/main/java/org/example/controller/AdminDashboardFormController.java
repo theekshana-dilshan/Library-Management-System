@@ -165,6 +165,17 @@ public class AdminDashboardFormController {
     }
 
     @FXML
+    void btnSeeHistoryOnAction(ActionEvent event) throws IOException {
+        setUI(subRoot,"/view/AdminTransactionHistoryForm.fxml");
+
+        imgDashBoardDefault();
+        imgUsersDefault();
+        imgBooksDefault();
+        imgBranchesDefault();
+        imgHistoryFocused();
+    }
+
+    @FXML
     void lblBranchesOnAction(MouseEvent event) throws IOException {
         setUI(subRoot,"/view/BranchesForm.fxml");
 
@@ -202,7 +213,6 @@ public class AdminDashboardFormController {
     @FXML
     void lblHistoryOnAction(MouseEvent event) throws IOException {
         setUI(subRoot,"/view/AdminTransactionHistoryForm.fxml");
-
 
         imgDashBoardDefault();
         imgUsersDefault();

@@ -17,6 +17,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import org.example.bo.BOFactory;
 import org.example.bo.custom.BooksBO;
+import org.example.bo.custom.UserBO;
 import org.example.dto.BooksDTO;
 import org.example.dto.UserDTO;
 import org.example.entity.Books;
@@ -86,6 +87,9 @@ public class UserDashboardFormController {
     private Label lblHistory;
 
     @FXML
+    private Label lblUserName;
+
+    @FXML
     private AnchorPane root;
 
     @FXML
@@ -107,6 +111,8 @@ public class UserDashboardFormController {
 
     private ObservableList<OurBooksTm> obList;
 
+    private UserBO userBO= (UserBO) BOFactory.getBOFactory().getBO(BOFactory.BOTypes.USER);
+
     public void initialize(){
         imgDashBoardFocused();
         setShadowsToPanes();
@@ -115,6 +121,7 @@ public class UserDashboardFormController {
         loadAllBooks();
         customLogOutPane();
         setLblCounts();
+        setLblUserName();
     }
 
     private void setCellValue() {
@@ -249,7 +256,6 @@ public class UserDashboardFormController {
     void setShadowsToPanes(){
         booksPane.setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, #a9cdfa, 10, 0, 0, 6); -fx-background-radius: 10px;");
         statusPane.setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, #a9cdfa, 10, 0, 0, 6); -fx-background-radius: 10px;");
-        topReaderPane.setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, #a9cdfa, 10, 0, 0, 6); -fx-background-radius: 10px;");
         helloPane.setStyle("-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, #a9cdfa, 10, 0, 0, 6); -fx-background-radius: 10px;");
     }
 
@@ -401,5 +407,10 @@ public class UserDashboardFormController {
         }else {
             lblBiographyAndAutobiographyAndMemoirCount.setText(String.valueOf(size));
         }
+    }
+
+    public void setLblUserName(){
+        UserDTO userDTO = userBO.searchUser(UserLoginFormController.userId);
+        lblUserName.setText("Hello! "+userDTO.getUserName());
     }
 }
