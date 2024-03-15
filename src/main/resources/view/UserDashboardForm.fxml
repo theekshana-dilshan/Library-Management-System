@@ -137,6 +137,152 @@
                   </TableView>
                </children>
             </Pane>
+            <Pane fx:id="categoryPane" layoutX="495.0" layoutY="362.0" prefHeight="379.0" prefWidth="738.0" style="-fx-background-radius: 10px; -fx-background-color: #FCFCFC;">
+               <children>
+                  <Pane layoutX="52.0" layoutY="46.0" prefHeight="129.0" prefWidth="127.0" style="-fx-background-radius: 10px; -fx-border-color: #1479FF; -fx-border-radius: 10px; -fx-border-width: 2px;">
+                     <children>
+                        <Label layoutX="36.0" layoutY="27.0" text="Romance" textFill="#193b68">
+                           <font>
+                              <Font name="Arial Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblRomanceCount" alignment="CENTER" layoutX="35.0" layoutY="89.0" prefHeight="21.0" prefWidth="56.0" text="00" textFill="#1479ff">
+                           <font>
+                              <Font name="Arial Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="555.0" layoutY="46.0" prefHeight="129.0" prefWidth="127.0" style="-fx-background-radius: 10px; -fx-border-color: #1479FF; -fx-border-radius: 10px; -fx-border-width: 2px;">
+                     <children>
+                        <Label layoutX="43.0" layoutY="27.0" text="Trillers" textFill="#193b68">
+                           <font>
+                              <Font name="Arial Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="29.0" layoutY="42.0" text="and Horrors" textFill="#193b68">
+                           <font>
+                              <Font name="Arial Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblThrillersAndHorrorsCount" alignment="CENTER" layoutX="35.0" layoutY="89.0" prefHeight="21.0" prefWidth="56.0" text="00" textFill="#1479ff">
+                           <font>
+                              <Font name="Arial Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="388.0" layoutY="46.0" prefHeight="129.0" prefWidth="127.0" style="-fx-background-radius: 10px; -fx-border-color: #1479FF; -fx-border-radius: 10px; -fx-border-width: 2px;">
+                     <children>
+                        <Label layoutX="41.0" layoutY="27.0" text="Fantacy" textFill="#193b68">
+                           <font>
+                              <Font name="Arial Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="28.0" layoutY="42.0" text="and Sciense" textFill="#193b68">
+                           <font>
+                              <Font name="Arial Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblFantasyAndScienceCount" alignment="CENTER" layoutX="35.0" layoutY="89.0" prefHeight="21.0" prefWidth="56.0" text="00" textFill="#1479ff">
+                           <font>
+                              <Font name="Arial Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="221.0" layoutY="46.0" prefHeight="129.0" prefWidth="127.0" style="-fx-background-radius: 10px; -fx-border-color: #1479FF; -fx-border-radius: 10px; -fx-border-width: 2px;">
+                     <children>
+                        <Label layoutX="40.0" layoutY="27.0" text="Mystery" textFill="#193b68">
+                           <font>
+                              <Font name="Arial Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblMysteryCount" alignment="CENTER" layoutX="35.0" layoutY="89.0" prefHeight="21.0" prefWidth="56.0" text="00" textFill="#1479ff">
+                           <font>
+                              <Font name="Arial Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="52.0" layoutY="210.0" prefHeight="129.0" prefWidth="127.0" style="-fx-background-radius: 10px; -fx-border-color: #1479FF; -fx-border-radius: 10px; -fx-border-width: 2px;">
+                     <children>
+                        <Label layoutX="28.0" layoutY="27.0" text="Young Adult" textFill="#193b68">
+                           <font>
+                              <Font name="Arial Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblYoungAdultCount" alignment="CENTER" layoutX="35.0" layoutY="89.0" prefHeight="21.0" prefWidth="56.0" text="00" textFill="#1479ff">
+                           <font>
+                              <Font name="Arial Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="555.0" layoutY="210.0" prefHeight="129.0" prefWidth="127.0" style="-fx-background-radius: 10px; -fx-border-color: #1479FF; -fx-border-radius: 10px; -fx-border-width: 2px;">
+                     <children>
+                        <Label layoutX="32.0" layoutY="27.0" text="Biography," textFill="#193b68">
+                           <font>
+                              <Font name="Arial Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="19.0" layoutY="42.0" text="Autobiography," textFill="#193b68">
+                           <font>
+                              <Font name="Arial Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="29.0" layoutY="57.0" text="and Memoir" textFill="#193b68">
+                           <font>
+                              <Font name="Arial Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblBiographyAndAutobiographyAndMemoirCount" alignment="CENTER" layoutX="35.0" layoutY="89.0" prefHeight="21.0" prefWidth="56.0" text="00" textFill="#1479ff">
+                           <font>
+                              <Font name="Arial Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="388.0" layoutY="210.0" prefHeight="129.0" prefWidth="127.0" style="-fx-background-radius: 10px; -fx-border-color: #1479FF; -fx-border-radius: 10px; -fx-border-width: 2px;">
+                     <children>
+                        <Label layoutX="26.0" layoutY="27.0" text="Inspirational," textFill="#193b68">
+                           <font>
+                              <Font name="Arial Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="38.0" layoutY="42.0" text="Self-help," textFill="#193b68">
+                           <font>
+                              <Font name="Arial Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="24.0" layoutY="57.0" text="and Religious" textFill="#193b68">
+                           <font>
+                              <Font name="Arial Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblInspirationalAndSelfHelpAndReligiousCount" alignment="CENTER" layoutX="35.0" layoutY="89.0" prefHeight="21.0" prefWidth="56.0" text="00" textFill="#1479ff">
+                           <font>
+                              <Font name="Arial Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="221.0" layoutY="210.0" prefHeight="129.0" prefWidth="127.0" style="-fx-background-radius: 10px; -fx-border-color: #1479FF; -fx-border-radius: 10px; -fx-border-width: 2px;">
+                     <children>
+                        <Label layoutX="15.0" layoutY="27.0" text="Children's fiction" textFill="#193b68">
+                           <font>
+                              <Font name="Arial Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblChildrenCount" alignment="CENTER" layoutX="35.0" layoutY="89.0" prefHeight="21.0" prefWidth="56.0" text="00" textFill="#1479ff">
+                           <font>
+                              <Font name="Arial Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
          </children>
       </AnchorPane>
       <Pane fx:id="logOutPane" layoutX="41.0" layoutY="570.0" prefHeight="171.0" prefWidth="171.0" style="-fx-background-color: #1479FF;">

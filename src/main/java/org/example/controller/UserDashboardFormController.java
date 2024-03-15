@@ -18,6 +18,9 @@ import javafx.stage.Stage;
 import org.example.bo.BOFactory;
 import org.example.bo.custom.BooksBO;
 import org.example.dto.BooksDTO;
+import org.example.dto.UserDTO;
+import org.example.entity.Books;
+import org.example.entity.Transaction;
 import org.example.tm.OurBooksTm;
 
 import java.io.File;
@@ -29,6 +32,14 @@ import java.util.Optional;
 
 public class UserDashboardFormController {
 
+    public Label lblChildrenCount;
+    public Label lblInspirationalAndSelfHelpAndReligiousCount;
+    public Label lblBiographyAndAutobiographyAndMemoirCount;
+    public Label lblYoungAdultCount;
+    public Label lblMysteryCount;
+    public Label lblFantasyAndScienceCount;
+    public Label lblThrillersAndHorrorsCount;
+    public Label lblRomanceCount;
     @FXML
     private Pane DashBoardIconPane;
 
@@ -103,6 +114,7 @@ public class UserDashboardFormController {
         setCellValue();
         loadAllBooks();
         customLogOutPane();
+        setLblCounts();
     }
 
     private void setCellValue() {
@@ -263,6 +275,131 @@ public class UserDashboardFormController {
             stage.setScene(scene);
             stage.centerOnScreen();
             stage.show();
+        }
+    }
+
+    void setLblCounts(){
+        setLblFantacyAndScienceCount();
+        setLblRomanceCount();
+        setLblMysteryCount();
+        setLblYoungAdultCount();
+        setLblChildrensCount();
+        setLblTrillersAndHorrorsCount();
+        setLblInspirationalAndSelfHelpAndReligiousCount();
+        setLblBiographyAndAutobiographyAndMemoirCount();
+    }
+
+    public void setLblMysteryCount(){
+        String genre = "Mystery";
+        List<Books> bookByGenre = booksBO.getBookByGenre(genre);
+        int size = bookByGenre.size();
+
+        if (size < 10) {
+            lblMysteryCount.setText("0" + String.valueOf(size));
+        }else {
+            lblMysteryCount.setText(String.valueOf(size));
+        }
+    }
+
+    public void setLblRomanceCount(){
+        String genre = "Romance";
+        List<Books> bookByGenre = booksBO.getBookByGenre(genre);
+        int size = bookByGenre.size();
+
+        if (size < 10) {
+            lblRomanceCount.setText("0" + String.valueOf(size));
+        }else {
+            lblRomanceCount.setText(String.valueOf(size));
+        }
+    }
+
+    public void setLblFantacyAndScienceCount(){
+        String genre = "Fantasy";
+        String genre2 = "Science";
+        List<Books> bookByGenre = booksBO.getBookByGenre(genre);
+        int size = bookByGenre.size();
+        bookByGenre = booksBO.getBookByGenre(genre2);
+        size = size + bookByGenre.size();
+
+        if (size < 10) {
+            lblFantasyAndScienceCount.setText("0" + String.valueOf(size));
+        }else {
+            lblFantasyAndScienceCount.setText(String.valueOf(size));
+        }
+    }
+
+    public void setLblTrillersAndHorrorsCount(){
+        String genre = "Thriller";
+        String genre2 = "Horror";
+        List<Books> bookByGenre = booksBO.getBookByGenre(genre);
+        int size = bookByGenre.size();
+        bookByGenre = booksBO.getBookByGenre(genre2);
+        size = size + bookByGenre.size();
+
+        if (size < 10) {
+            lblThrillersAndHorrorsCount.setText("0" + String.valueOf(size));
+        }else {
+            lblThrillersAndHorrorsCount.setText(String.valueOf(size));
+        }
+    }
+
+    public void setLblYoungAdultCount(){
+        String genre = "Young Adult";
+        List<Books> bookByGenre = booksBO.getBookByGenre(genre);
+        int size = bookByGenre.size();
+
+        if (size < 10) {
+            lblYoungAdultCount.setText("0" + String.valueOf(size));
+        }else {
+            lblYoungAdultCount.setText(String.valueOf(size));
+        }
+    }
+
+    public void setLblChildrensCount(){
+        String genre = "Children's";
+        List<Books> bookByGenre = booksBO.getBookByGenre(genre);
+        int size = bookByGenre.size();
+
+        if (size < 10) {
+            lblChildrenCount.setText("0" + String.valueOf(size));
+        }else {
+            lblChildrenCount.setText(String.valueOf(size));
+        }
+    }
+
+    public void setLblInspirationalAndSelfHelpAndReligiousCount(){
+        String genre = "Inspirational";
+        String genre2 = "Religious";
+        String genre3 = "Self-help";
+        List<Books> bookByGenre = booksBO.getBookByGenre(genre);
+        int size = bookByGenre.size();
+        bookByGenre = booksBO.getBookByGenre(genre2);
+        size = size + bookByGenre.size();
+        bookByGenre = booksBO.getBookByGenre(genre3);
+        size = size + bookByGenre.size();
+
+        if (size < 10) {
+            lblInspirationalAndSelfHelpAndReligiousCount.setText("0" + String.valueOf(size));
+        }else {
+            lblInspirationalAndSelfHelpAndReligiousCount.setText(String.valueOf(size));
+        }
+    }
+
+    public void setLblBiographyAndAutobiographyAndMemoirCount(){
+        String genre = "Biography";
+        String genre2 = "Autobiography";
+        String genre3 = "Memoir";
+        List<Books> bookByGenre = booksBO.getBookByGenre(genre);
+        int size = bookByGenre.size();
+        bookByGenre = booksBO.getBookByGenre(genre2);
+        size = size + bookByGenre.size();
+        bookByGenre = booksBO.getBookByGenre(genre3);
+        size = size + bookByGenre.size();
+
+        if (size < 10) {
+            lblBiographyAndAutobiographyAndMemoirCount.setText("0" + String.valueOf(size));
+        }else {
+            lblBiographyAndAutobiographyAndMemoirCount.setText(String.valueOf(size));
         }
     }
 }
